@@ -12,12 +12,17 @@
  *                              near = sum_{k=1}^{D-1} sum_v (n - |R_k(v)|)   (rewards slack).
  * Each round cools geometrically from T0 to T1 over `sweep` moves, then reheats from the best graph of the round.
  * A graph with far = 0 has diameter <= D: it becomes the incumbent (diameter recomputed exactly) and the target drops
- * by one. The run ends when its CPU time reaches `budget` seconds, or after `stall` CPU seconds without a new
- * incumbent. No bound or known value is used to stop.
+ * by one. Lower bound: the Moore bound. A graph of maximum degree d and diameter k has at most
+ * 1 + d + d(d-1) + ... + d(d-1)^(k-1) nodes, so the diameter is at least LB = the smallest k whose bound reaches n
+ * (LB = 1 only when d >= n - 1). The program computes LB, never targets a diameter below it, and stops as soon as the
+ * incumbent equals LB: the graph is then proven optimal. Otherwise the run ends when its CPU time reaches `budget`
+ * seconds, or after `stall` CPU seconds without a new incumbent. No known value is used.
  *
  * Output: OUT (DIMACS-like .gph as QOBLIB uses: "p edge n m", "e u v", 1-based), rewritten at every new incumbent;
- * TS, the run's objective time series in QOBLIB's format ([[{"Time": wall seconds since start, "Incumbent":
- * diameter}, ...]]: the start graph, every new incumbent, and the end of the run); one RESULT line on stdout.
+ * TS, the run's objective time series in QOBLIB's format ([[{"Time": seconds, "Incumbent": diameter}, ...]]: the
+ * start graph, every new incumbent, and the end of the run). Times are the process's own CPU time (user + system)
+ * since the start, i.e. the run's time without any waiting for a core on a shared machine; the RESULT line on stdout
+ * also gives wall-clock times.
  * Every result is re-checked by check.py (a separate Python code path: breadth-first search from every node).
  *
  * Usage: qob_topo n d budget stall seed OUT TS [sweep] [T0] [T1] [WF]   (defaults 10000000, 8, 0.5, 1)
@@ -87,6 +92,13 @@ static long long cost(long long *farp) {
     return WFAR * far + nearsum;
 }
 
+/* Moore lower bound on the diameter: smallest k >= 1 with 1 + d * sum_{i<k} (d-1)^i >= n */
+static int moore_lb(int nn, int dd) {
+    double M = 1, term = dd;
+    for (int k = 1; k < nn; k++) { M += term; if (M >= nn) return k; term *= (dd - 1); }
+    return nn - 1;
+}
+
 /* exact diameter, or -1 when the graph is disconnected */
 static int diameter(void) {
     uint64_t *cur = R0, *nxt = R1;
@@ -133,7 +145,7 @@ static void write_graph(const char *path, int diam, unsigned long long seed, dou
     FILE *f = fopen(tmp, "w");
     if (!f) { perror(tmp); exit(2); }
     fprintf(f, "c Undirected graph with diameter %d (n = %d, max degree %d)\n", diam, n, d);
-    fprintf(f, "c Found by qob_topo (simulated annealing over degree-preserving edge switches), seed %llu, %.1f s\n", seed, wall);
+    fprintf(f, "c Found by qob_topo (simulated annealing over degree-preserving edge switches), seed %llu, %.1f s CPU\n", seed, wall);
     fprintf(f, "p edge %d %d\n", n, ne);
     for (int i = 0; i < ne; i++) fprintf(f, "e %d %d\n", ea[i] + 1, eb[i] + 1);
     fclose(f); rename(tmp, path);
@@ -187,13 +199,14 @@ int main(int argc, char **argv) {
         inc = diameter();
     }
     if (inc < 0) { fprintf(stderr, "start graph disconnected\n"); return 3; }
-    write_graph(out, inc, seed, now() - t0);
-    ts_add(now() - t0, inc);
+    int lb = moore_lb(n, d);
+    write_graph(out, inc, seed, cpu() - c0);
+    ts_add(cpu() - c0, inc);
     double clast = cpu() - c0, wbest = now() - t0, cbest = clast;
     int start = inc;
     long long moves = 0;
-    fprintf(stderr, "qob_topo n=%d d=%d edges=%d seed=%llu start diameter %d\n", n, d, ne, seed, inc);
-    for (D = inc - 1; D >= 1; D = inc - 1) {
+    fprintf(stderr, "qob_topo n=%d d=%d edges=%d seed=%llu start diameter %d, Moore lower bound %d\n", n, d, ne, seed, inc, lb);
+    for (D = inc - 1; D >= lb; D = inc - 1) {
         long long far, cur = cost(&far), best = cur;
         memcpy(bestadj, adj, sizeof(int) * (size_t)n * d); memcpy(bestdeg, deg, sizeof(int) * n);
         int found = 0, stop = 0;
@@ -224,15 +237,15 @@ int main(int argc, char **argv) {
         if (dd < 0 || dd > D) { fprintf(stderr, "internal: diameter %d above target %d\n", dd, D); return 3; }
         inc = dd;
         wbest = now() - t0; cbest = cpu() - c0; clast = cbest;
-        write_graph(out, inc, seed, wbest);
-        ts_add(wbest, inc);
+        write_graph(out, inc, seed, cbest);
+        ts_add(cbest, inc);
         fprintf(stderr, "diameter %d at %.2f s wall, %.2f s cpu, %lld moves\n", inc, wbest, cbest, moves);
         if (cbest > budget) break;
     }
     double wend = now() - t0, cend = cpu() - c0;
-    ts_add(wend, inc);
+    ts_add(cend, inc);
     ts_write(tspath);
-    printf("RESULT n=%d d=%d diameter=%d start=%d wall=%.2f cpu=%.2f best_wall=%.2f best_cpu=%.2f moves=%lld seed=%llu\n",
-           n, d, inc, start, wend, cend, wbest, cbest, moves, seed);
+    printf("RESULT n=%d d=%d diameter=%d start=%d lb=%d proven=%d wall=%.2f cpu=%.2f best_wall=%.2f best_cpu=%.2f moves=%lld seed=%llu\n",
+           n, d, inc, start, lb, inc == lb, wend, cend, wbest, cbest, moves, seed);
     return 0;
 }

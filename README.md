@@ -14,8 +14,8 @@ holds the code and the exact commands, so every run can be repeated.
 
 | Path | What it is |
 | :--- | :--------- |
-| `src/qob_topo.c` | Order/degree search: degree-preserving edge switches, simulated annealing, descending diameter target |
-| `src/qob_numvc.c` | Stable sets via vertex cover local search after NuMVC (Cai, Su, Luo and Sattar, JAIR 46, 2013) |
+| `src/qob_topo.c` | Order/degree search: degree-preserving edge switches, simulated annealing, descending diameter target, Moore lower bound as cutoff |
+| `src/qob_numvc.c` | Stable sets via vertex cover local search after NuMVC (Cai, Su, Luo and Sattar, JAIR 46, 2013), greedy clique-cover upper bound as cutoff |
 | `check/check.py` | Independent checker (Python 3, standard library, integers only) |
 | `runs/commands.txt` | Every run behind the submissions: instance, seed, limits and the exact command line |
 
@@ -38,16 +38,22 @@ Paths to QOBLIB instance files assume a clone of QOBLIB in `QOBLIB/`.
 # then sweep (moves per cooling round), T0, T1, weight of far pairs
 ./qob_topo 30 6 150 60 1 topology_30_6.gph topology_30_6.json 10000000 8 0.5 1
 
-# stable set: graph, wall-clock limit (s), seed, write-threshold (0 = always write), solution out,
-# gamma (0 = n/2), rho (0 = 0.3), stop size (0 = none), time series out
+# stable set: graph, CPU budget (s), seed, write-threshold (0 = always write), solution out,
+# gamma (0 = n/2), rho (0 = 0.3), extra stop size (0 = none), time series out
 ./qob_numvc QOBLIB/07-independentset/instances/frb100-40.gph 30 1 0 frb100-40.sol 0 0 0 frb100-40.json
 ```
 
 `qob_topo` starts from a scrambled circulant graph, takes its diameter as the first incumbent and then lowers the
-target diameter by one each time it finds a graph that meets it. A run ends at its CPU budget or after the stall
-limit without a new incumbent. `qob_numvc` runs to its wall-clock limit. Neither program uses a bound or a known
-value to stop. Both write the solution in QOBLIB's format and the objective time series in QOBLIB's JSON format:
-one run, with the first incumbent, every improvement and the end of the run.
+target diameter by one each time it finds a graph that meets it. It computes the Moore lower bound (the smallest k
+with 1 + d + d(d-1) + ... + d(d-1)^(k-1) >= n), never targets below it, and stops when the incumbent reaches it:
+the graph is then proven optimal. Otherwise a run ends at its CPU budget or after the stall limit without a new
+incumbent.
+
+`qob_numvc` first computes a greedy clique cover. A stable set has at most one vertex per clique, so the number of
+cliques is an upper bound, and the run stops when the stable set reaches it (proven optimal), or at its CPU budget.
+Neither program uses a known value. Both print their bound and write the solution in QOBLIB's format, plus the
+objective time series in QOBLIB's JSON format: one run, with the first incumbent, every improvement and the end of
+the run.
 
 ## Check
 
@@ -62,22 +68,19 @@ invalid or the value differs from the optional claim. It also handles LABS seque
 
 ## Timing
 
-The runs shared a busy 18-core machine with other jobs, at nice 10. A process was often ready to run but waiting
-for a free core, so its CPU time is lower than its wall-clock time. `qob_topo` budgets are in CPU seconds and
-`qob_numvc` limits are in wall-clock seconds, as stated in `runs/commands.txt`.
+Both programs are single-threaded. They measure and report the process's own CPU time (user plus system): budgets,
+stall limits and the times in the time series are CPU seconds. That is the time a run takes with a core to itself.
+The runs behind the submissions shared a busy 18-core machine (load about 70 to 150) at nice 10, so their wall-clock
+times also contain waiting for a core; that waiting is excluded from every reported time.
 
 ## Earlier builds
 
-The longer stable-set runs (frb59-26-2: seeds 1-5, limit 3600 s for seed 1 and 1800 s for seeds 2-5; frb100-40:
-3600 s for seeds 1-5 and 7200 s for seeds 6-7) were made with earlier builds of `qob_numvc.c`. Those builds had the same search but wrote no time-series file,
-and the builds used for seed 1 of each instance did not report CPU time. Their time series were rebuilt from the
-run logs, which record every new incumbent with its time. frb59-26-2 seed 1 had a 3600 s limit and was ended by hand
-at 1186 s, after it had reached 59 at 1086 s.
-
-One output fix was made during the 30-second stable-set runs. The first build of `qob_numvc.c` used for them did not
-save the starting set when that set was already the run's best. The 54 runs where this happened, all on small
-instances, were rerun with the fixed build, and the reruns are the ones reported. The search is the same in both
-builds.
+The longer stable-set runs on frb59-26-2 (seeds 2 to 5, 1800 s wall limits) and frb100-40 (seeds 2 to 5, 3600 s, and
+6 and 7, 7200 s wall limits) were made with earlier builds of `qob_numvc.c`. Those builds had the same search, but no
+bound, a wall-clock limit and no time-series file. Their CPU times come from their logs, which record the CPU time of
+every new best set; the greedy start, within the first 0.1 s, has only a wall-clock reading. The first seed-1 runs
+on both instances had no CPU readings at all, so seed 1 was rerun with the current build, which has the same seed and
+the same search and so follows the same path. The commands of all of these runs are in `runs/commands.txt`.
 
 ## AI disclosure
 

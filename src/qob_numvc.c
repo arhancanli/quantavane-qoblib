@@ -12,6 +12,11 @@
  *   - dscore(v) = weight of uncovered edges v would cover (v not in C), minus the weight that only v covers (v in C).
  *     Each step adds 1 to the weight of every uncovered edge; when the mean weight reaches gamma (default n/2) every
  *     weight becomes floor(rho * w) (rho = 0.3) and the scores are rebuilt.
+ * Upper bound: a greedy clique cover. Repeatedly take the uncovered vertex with the fewest uncovered neighbours and
+ * grow a clique from it among uncovered vertices, always adding the candidate adjacent to the most other candidates
+ * (smallest index on ties). A stable set holds at most one vertex of each clique, so the number of cliques UB bounds
+ * the stable set from above. The run stops as soon as its stable set reaches UB: the set is then proven optimal.
+ * Otherwise it ends when its CPU time reaches the budget.
  * Every reported set is re-checked here (each edge has an endpoint in the cover) and again by check.py
  * (a separate Python code path) before it is used.
  *
@@ -19,10 +24,11 @@
  * is (re)written as a QOBLIB stable-set solution (1-based node indices, '#' comments).
  *
  * Usage: qob_numvc GRAPH.gph seconds seed target OUT [gamma] [rho] [stop] [TS]
- *   (`seconds` is a wall-clock limit; gamma, rho <= 0 keep the defaults; stop <= 0 means no early stop, otherwise
- *   the run ends once the stable set reaches `stop`; TS, when given, receives the run's objective time series in
- *   QOBLIB's format: [[{"Time": wall seconds since start, "Incumbent": stable set size}, ...]] with the first set,
- *   every improvement and the end of the run)
+ *   (`seconds` is a CPU-time budget; gamma, rho <= 0 keep the defaults; stop <= 0 means no early stop other than the
+ *   clique-cover bound, otherwise the run also ends once the stable set reaches `stop`; TS, when given, receives the
+ *   run's objective time series in QOBLIB's format: [[{"Time": seconds, "Incumbent": stable set size}, ...]] with the
+ *   first set, every improvement and the end of the run. All times are the process's own CPU time (user + system),
+ *   i.e. without any waiting for a core on a shared machine; BEST lines on stdout also give wall-clock times.)
  * Build: cc -O3 -o qob_numvc qob_numvc.c
  */
 #include <stdint.h>
@@ -127,12 +133,48 @@ static void ts_write(const char *path) {
     fclose(f);
 }
 
+/* greedy clique cover: its number of cliques is an upper bound on the stable set (see the header) */
+static int clique_cover_bound(void) {
+    if (n > 20000) return n;
+    int Wn = (n + 63) / 64;
+    uint64_t *A = calloc((size_t)n * Wn, sizeof(uint64_t)), *U = calloc(Wn, 8), *cand = calloc(Wn, 8);
+    if (!A || !U || !cand) return n;
+    for (int v = 0; v < n; v++) for (int i = xadj[v]; i < xadj[v + 1]; i++) { int u = adjn[i]; A[(size_t)v * Wn + (u >> 6)] |= 1ULL << (u & 63); }
+    for (int v = 0; v < n; v++) U[v >> 6] |= 1ULL << (v & 63);
+    int left = n, count = 0;
+    while (left > 0) {
+        int v = -1, bd = 1 << 30;
+        for (int x = 0; x < n; x++) if (U[x >> 6] >> (x & 63) & 1) {
+            int dg = 0; const uint64_t *ax = A + (size_t)x * Wn;
+            for (int k = 0; k < Wn; k++) dg += __builtin_popcountll(ax[k] & U[k]);
+            if (dg < bd) { bd = dg; v = x; }
+        }
+        U[v >> 6] &= ~(1ULL << (v & 63)); left--;
+        int any = 0;
+        for (int k = 0; k < Wn; k++) { cand[k] = A[(size_t)v * Wn + k] & U[k]; any |= cand[k] != 0; }
+        while (any) {
+            int u = -1, bu = -1;
+            for (int k = 0; k < Wn; k++) for (uint64_t b = cand[k]; b; b &= b - 1) {
+                int x = k * 64 + __builtin_ctzll(b), c = 0; const uint64_t *ax = A + (size_t)x * Wn;
+                for (int j = 0; j < Wn; j++) c += __builtin_popcountll(ax[j] & cand[j]);
+                if (c > bu) { bu = c; u = x; }
+            }
+            U[u >> 6] &= ~(1ULL << (u & 63)); left--;
+            any = 0;
+            for (int k = 0; k < Wn; k++) { cand[k] &= A[(size_t)u * Wn + k]; any |= cand[k] != 0; }
+        }
+        count++;
+    }
+    free(A); free(U); free(cand);
+    return count;
+}
+
 static int is_cover(const char *c) { for (int e = 0; e < m; e++) if (!c[eu[e]] && !c[ev[e]]) return 0; return 1; }
 
 static void write_sol(const char *path, const char *cover, int size, const char *gname, unsigned long long seed, double t) {
     char tmp[1100]; snprintf(tmp, sizeof tmp, "%s.tmp", path);
     FILE *f = fopen(tmp, "w"); if (!f) { perror(tmp); return; }
-    fprintf(f, "# Objective value = %d\n# Stable set for %s found by qob_numvc (vertex cover local search), seed %llu, %.1f s\n", size, gname, seed, t);
+    fprintf(f, "# Objective value = %d\n# Stable set for %s found by qob_numvc (vertex cover local search), seed %llu, %.1f s CPU\n", size, gname, seed, t);
     for (int v = 0; v < n; v++) if (!cover[v]) fprintf(f, "%d\n", v + 1);
     fclose(f); rename(tmp, path);
 }
@@ -142,7 +184,7 @@ int main(int argc, char **argv) {
     const char *gpath = argv[1]; double secs = atof(argv[2]); unsigned long long seed = strtoull(argv[3], 0, 10);
     int target = atoi(argv[4]); const char *out = argv[5];
     rs = seed * 0x9E3779B97F4A7C15ULL + 0x2545F4914F6CDD1DULL; if (!rs) rs = 1;
-    double t0 = now();
+    double t0 = now(), c0 = cpu();
     if (!read_graph(gpath)) return 2;
     double gamma = argc > 6 ? atof(argv[6]) : 0, rho = argc > 7 ? atof(argv[7]) : 0;
     if (gamma <= 0) gamma = 0.5 * n;
@@ -157,6 +199,9 @@ int main(int argc, char **argv) {
     cl = malloc(sizeof(int) * n); cpos = malloc(sizeof(int) * n); ncl = 0;
     char *best = malloc(n);
     fprintf(stderr, "qob_numvc %s n=%d m=%d seed=%llu target=%d gamma=%.0f rho=%.2f (read %.1f s)\n", gpath, n, m, seed, target, gamma, rho, now() - t0);
+    int ub = clique_cover_bound();
+    if (ub < stopsize) stopsize = ub;
+    printf("BOUND ub=%d cpu=%.2f\n", ub, cpu() - c0); fflush(stdout);
     /* start: all edges uncovered, greedy cover by highest dscore with random ties */
     for (int e = 0; e < m; e++) { unc_add(e); dscore[eu[e]]++; dscore[ev[e]]++; }
     while (nunc > 0) {
@@ -168,21 +213,21 @@ int main(int argc, char **argv) {
     for (int i = ncl - 1; i >= 0; i--) { int v = cl[i]; if (dscore[v] == 0) remove_v(v, 0); }
     memcpy(best, inC, n);
     int bestsize = n - ncl;
-    printf("BEST %d t=%.2f step=0\n", bestsize, now() - t0); fflush(stdout);
-    ts_add(now() - t0, bestsize);
-    if (bestsize > target) write_sol(out, best, bestsize, gpath, seed, now() - t0);
+    printf("BEST %d t=%.2f cpu=%.2f step=0\n", bestsize, now() - t0, cpu() - c0); fflush(stdout);
+    ts_add(cpu() - c0, bestsize);
+    if (bestsize > target) write_sol(out, best, bestsize, gpath, seed, cpu() - c0);
     long long totw = m;  /* sum of weights */
     int lastadded = -1;
     long long step;
-    for (step = 1;; step++) {
-        if ((step & 1023) == 0 && now() - t0 > secs) break;
+    for (step = 1; bestsize < stopsize; step++) {
+        if ((step & 1023) == 0 && cpu() - c0 > secs) break;
         if (nunc == 0) {
             if (n - ncl > bestsize) {
                 if (!is_cover(inC)) { fprintf(stderr, "internal: not a cover\n"); return 3; }
                 memcpy(best, inC, n); bestsize = n - ncl;
-                printf("BEST %d t=%.2f cpu=%.2f step=%lld\n", bestsize, now() - t0, cpu(), step); fflush(stdout);
-                ts_add(now() - t0, bestsize);
-                if (bestsize > target) write_sol(out, best, bestsize, gpath, seed, now() - t0);
+                printf("BEST %d t=%.2f cpu=%.2f step=%lld\n", bestsize, now() - t0, cpu() - c0, step); fflush(stdout);
+                ts_add(cpu() - c0, bestsize);
+                if (bestsize > target) write_sol(out, best, bestsize, gpath, seed, cpu() - c0);
                 if (bestsize >= stopsize) break;
             }
             /* remove the vertex of C with the highest dscore */
@@ -211,8 +256,8 @@ int main(int argc, char **argv) {
             rebuild_scores();
         }
     }
-    ts_add(now() - t0, bestsize);
+    ts_add(cpu() - c0, bestsize);
     if (tspath) ts_write(tspath);
-    printf("END best %d steps %lld time %.1f cpu %.1f\n", bestsize, step, now() - t0, cpu());
+    printf("END best %d steps %lld time %.1f cpu %.1f ub %d proven %d\n", bestsize, step, now() - t0, cpu() - c0, ub, bestsize >= ub);
     return 0;
 }
