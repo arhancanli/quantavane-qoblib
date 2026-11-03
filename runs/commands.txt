@@ -1,0 +1,384 @@
+# Every run behind the QOBLIB submissions 20261102_EdgeSwitchSA_Canli (10-topology) and 20261102_NuMVC_Canli
+# (07-independentset). Format: <run name> <command>. Each command was run as `nice -n 10 <command>` on the machine
+# described in README.md. ./qob_topo and ./qob_numvc are built from src/; QOBLIB/ is a clone of
+# https://github.com/ZIB-AOPT/QOBLIB; out/ holds the outputs.
+
+# 10-topology: n d budget(CPU s) stall(CPU s) seed graph-out time-series-out sweep T0 T1 weight
+t2_topology_15_3_s1 ./qob_topo 15 3 150 60 1 out/topology/topology_15_3_s1.gph out/topology/topology_15_3_s1.json 10000000 8 0.5 1
+t2_topology_15_3_s2 ./qob_topo 15 3 150 60 2 out/topology/topology_15_3_s2.gph out/topology/topology_15_3_s2.json 10000000 8 0.5 1
+t2_topology_15_3_s3 ./qob_topo 15 3 150 60 3 out/topology/topology_15_3_s3.gph out/topology/topology_15_3_s3.json 10000000 8 0.5 1
+t2_topology_15_3_s4 ./qob_topo 15 3 150 60 4 out/topology/topology_15_3_s4.gph out/topology/topology_15_3_s4.json 10000000 8 0.5 1
+t2_topology_15_3_s5 ./qob_topo 15 3 150 60 5 out/topology/topology_15_3_s5.gph out/topology/topology_15_3_s5.json 10000000 8 0.5 1
+t2_topology_15_4_s1 ./qob_topo 15 4 150 60 1 out/topology/topology_15_4_s1.gph out/topology/topology_15_4_s1.json 10000000 8 0.5 1
+t2_topology_15_4_s2 ./qob_topo 15 4 150 60 2 out/topology/topology_15_4_s2.gph out/topology/topology_15_4_s2.json 10000000 8 0.5 1
+t2_topology_15_4_s3 ./qob_topo 15 4 150 60 3 out/topology/topology_15_4_s3.gph out/topology/topology_15_4_s3.json 10000000 8 0.5 1
+t2_topology_15_4_s4 ./qob_topo 15 4 150 60 4 out/topology/topology_15_4_s4.gph out/topology/topology_15_4_s4.json 10000000 8 0.5 1
+t2_topology_15_4_s5 ./qob_topo 15 4 150 60 5 out/topology/topology_15_4_s5.gph out/topology/topology_15_4_s5.json 10000000 8 0.5 1
+t2_topology_20_3_s1 ./qob_topo 20 3 150 60 1 out/topology/topology_20_3_s1.gph out/topology/topology_20_3_s1.json 10000000 8 0.5 1
+t2_topology_20_3_s2 ./qob_topo 20 3 150 60 2 out/topology/topology_20_3_s2.gph out/topology/topology_20_3_s2.json 10000000 8 0.5 1
+t2_topology_20_3_s3 ./qob_topo 20 3 150 60 3 out/topology/topology_20_3_s3.gph out/topology/topology_20_3_s3.json 10000000 8 0.5 1
+t2_topology_20_3_s4 ./qob_topo 20 3 150 60 4 out/topology/topology_20_3_s4.gph out/topology/topology_20_3_s4.json 10000000 8 0.5 1
+t2_topology_20_3_s5 ./qob_topo 20 3 150 60 5 out/topology/topology_20_3_s5.gph out/topology/topology_20_3_s5.json 10000000 8 0.5 1
+t2_topology_20_4_s1 ./qob_topo 20 4 150 60 1 out/topology/topology_20_4_s1.gph out/topology/topology_20_4_s1.json 10000000 8 0.5 1
+t2_topology_20_4_s2 ./qob_topo 20 4 150 60 2 out/topology/topology_20_4_s2.gph out/topology/topology_20_4_s2.json 10000000 8 0.5 1
+t2_topology_20_4_s3 ./qob_topo 20 4 150 60 3 out/topology/topology_20_4_s3.gph out/topology/topology_20_4_s3.json 10000000 8 0.5 1
+t2_topology_20_4_s4 ./qob_topo 20 4 150 60 4 out/topology/topology_20_4_s4.gph out/topology/topology_20_4_s4.json 10000000 8 0.5 1
+t2_topology_20_4_s5 ./qob_topo 20 4 150 60 5 out/topology/topology_20_4_s5.gph out/topology/topology_20_4_s5.json 10000000 8 0.5 1
+t2_topology_20_5_s1 ./qob_topo 20 5 150 60 1 out/topology/topology_20_5_s1.gph out/topology/topology_20_5_s1.json 10000000 8 0.5 1
+t2_topology_20_5_s2 ./qob_topo 20 5 150 60 2 out/topology/topology_20_5_s2.gph out/topology/topology_20_5_s2.json 10000000 8 0.5 1
+t2_topology_20_5_s3 ./qob_topo 20 5 150 60 3 out/topology/topology_20_5_s3.gph out/topology/topology_20_5_s3.json 10000000 8 0.5 1
+t2_topology_20_5_s4 ./qob_topo 20 5 150 60 4 out/topology/topology_20_5_s4.gph out/topology/topology_20_5_s4.json 10000000 8 0.5 1
+t2_topology_20_5_s5 ./qob_topo 20 5 150 60 5 out/topology/topology_20_5_s5.gph out/topology/topology_20_5_s5.json 10000000 8 0.5 1
+t2_topology_25_3_s1 ./qob_topo 25 3 150 60 1 out/topology/topology_25_3_s1.gph out/topology/topology_25_3_s1.json 10000000 8 0.5 1
+t2_topology_25_3_s2 ./qob_topo 25 3 150 60 2 out/topology/topology_25_3_s2.gph out/topology/topology_25_3_s2.json 10000000 8 0.5 1
+t2_topology_25_3_s3 ./qob_topo 25 3 150 60 3 out/topology/topology_25_3_s3.gph out/topology/topology_25_3_s3.json 10000000 8 0.5 1
+t2_topology_25_3_s4 ./qob_topo 25 3 150 60 4 out/topology/topology_25_3_s4.gph out/topology/topology_25_3_s4.json 10000000 8 0.5 1
+t2_topology_25_3_s5 ./qob_topo 25 3 150 60 5 out/topology/topology_25_3_s5.gph out/topology/topology_25_3_s5.json 10000000 8 0.5 1
+t2_topology_25_4_s1 ./qob_topo 25 4 150 60 1 out/topology/topology_25_4_s1.gph out/topology/topology_25_4_s1.json 10000000 8 0.5 1
+t2_topology_25_4_s2 ./qob_topo 25 4 150 60 2 out/topology/topology_25_4_s2.gph out/topology/topology_25_4_s2.json 10000000 8 0.5 1
+t2_topology_25_4_s3 ./qob_topo 25 4 150 60 3 out/topology/topology_25_4_s3.gph out/topology/topology_25_4_s3.json 10000000 8 0.5 1
+t2_topology_25_4_s4 ./qob_topo 25 4 150 60 4 out/topology/topology_25_4_s4.gph out/topology/topology_25_4_s4.json 10000000 8 0.5 1
+t2_topology_25_4_s5 ./qob_topo 25 4 150 60 5 out/topology/topology_25_4_s5.gph out/topology/topology_25_4_s5.json 10000000 8 0.5 1
+t2_topology_25_5_s1 ./qob_topo 25 5 150 60 1 out/topology/topology_25_5_s1.gph out/topology/topology_25_5_s1.json 10000000 8 0.5 1
+t2_topology_25_5_s2 ./qob_topo 25 5 150 60 2 out/topology/topology_25_5_s2.gph out/topology/topology_25_5_s2.json 10000000 8 0.5 1
+t2_topology_25_5_s3 ./qob_topo 25 5 150 60 3 out/topology/topology_25_5_s3.gph out/topology/topology_25_5_s3.json 10000000 8 0.5 1
+t2_topology_25_5_s4 ./qob_topo 25 5 150 60 4 out/topology/topology_25_5_s4.gph out/topology/topology_25_5_s4.json 10000000 8 0.5 1
+t2_topology_25_5_s5 ./qob_topo 25 5 150 60 5 out/topology/topology_25_5_s5.gph out/topology/topology_25_5_s5.json 10000000 8 0.5 1
+t2_topology_25_6_s1 ./qob_topo 25 6 150 60 1 out/topology/topology_25_6_s1.gph out/topology/topology_25_6_s1.json 10000000 8 0.5 1
+t2_topology_25_6_s2 ./qob_topo 25 6 150 60 2 out/topology/topology_25_6_s2.gph out/topology/topology_25_6_s2.json 10000000 8 0.5 1
+t2_topology_25_6_s3 ./qob_topo 25 6 150 60 3 out/topology/topology_25_6_s3.gph out/topology/topology_25_6_s3.json 10000000 8 0.5 1
+t2_topology_25_6_s4 ./qob_topo 25 6 150 60 4 out/topology/topology_25_6_s4.gph out/topology/topology_25_6_s4.json 10000000 8 0.5 1
+t2_topology_25_6_s5 ./qob_topo 25 6 150 60 5 out/topology/topology_25_6_s5.gph out/topology/topology_25_6_s5.json 10000000 8 0.5 1
+t2_topology_30_4_s1 ./qob_topo 30 4 150 60 1 out/topology/topology_30_4_s1.gph out/topology/topology_30_4_s1.json 10000000 8 0.5 1
+t2_topology_30_4_s2 ./qob_topo 30 4 150 60 2 out/topology/topology_30_4_s2.gph out/topology/topology_30_4_s2.json 10000000 8 0.5 1
+t2_topology_30_4_s3 ./qob_topo 30 4 150 60 3 out/topology/topology_30_4_s3.gph out/topology/topology_30_4_s3.json 10000000 8 0.5 1
+t2_topology_30_4_s4 ./qob_topo 30 4 150 60 4 out/topology/topology_30_4_s4.gph out/topology/topology_30_4_s4.json 10000000 8 0.5 1
+t2_topology_30_4_s5 ./qob_topo 30 4 150 60 5 out/topology/topology_30_4_s5.gph out/topology/topology_30_4_s5.json 10000000 8 0.5 1
+t2_topology_30_5_s1 ./qob_topo 30 5 150 60 1 out/topology/topology_30_5_s1.gph out/topology/topology_30_5_s1.json 10000000 8 0.5 1
+t2_topology_30_5_s2 ./qob_topo 30 5 150 60 2 out/topology/topology_30_5_s2.gph out/topology/topology_30_5_s2.json 10000000 8 0.5 1
+t2_topology_30_5_s3 ./qob_topo 30 5 150 60 3 out/topology/topology_30_5_s3.gph out/topology/topology_30_5_s3.json 10000000 8 0.5 1
+t2_topology_30_5_s4 ./qob_topo 30 5 150 60 4 out/topology/topology_30_5_s4.gph out/topology/topology_30_5_s4.json 10000000 8 0.5 1
+t2_topology_30_5_s5 ./qob_topo 30 5 150 60 5 out/topology/topology_30_5_s5.gph out/topology/topology_30_5_s5.json 10000000 8 0.5 1
+t2_topology_30_6_s1 ./qob_topo 30 6 150 60 1 out/topology/topology_30_6_s1.gph out/topology/topology_30_6_s1.json 10000000 8 0.5 1
+t2_topology_30_6_s2 ./qob_topo 30 6 150 60 2 out/topology/topology_30_6_s2.gph out/topology/topology_30_6_s2.json 10000000 8 0.5 1
+t2_topology_30_6_s3 ./qob_topo 30 6 150 60 3 out/topology/topology_30_6_s3.gph out/topology/topology_30_6_s3.json 10000000 8 0.5 1
+t2_topology_30_6_s4 ./qob_topo 30 6 150 60 4 out/topology/topology_30_6_s4.gph out/topology/topology_30_6_s4.json 10000000 8 0.5 1
+t2_topology_30_6_s5 ./qob_topo 30 6 150 60 5 out/topology/topology_30_6_s5.gph out/topology/topology_30_6_s5.json 10000000 8 0.5 1
+t2_topology_35_5_s1 ./qob_topo 35 5 150 60 1 out/topology/topology_35_5_s1.gph out/topology/topology_35_5_s1.json 10000000 8 0.5 1
+t2_topology_35_5_s2 ./qob_topo 35 5 150 60 2 out/topology/topology_35_5_s2.gph out/topology/topology_35_5_s2.json 10000000 8 0.5 1
+t2_topology_35_5_s3 ./qob_topo 35 5 150 60 3 out/topology/topology_35_5_s3.gph out/topology/topology_35_5_s3.json 10000000 8 0.5 1
+t2_topology_35_5_s4 ./qob_topo 35 5 150 60 4 out/topology/topology_35_5_s4.gph out/topology/topology_35_5_s4.json 10000000 8 0.5 1
+t2_topology_35_5_s5 ./qob_topo 35 5 150 60 5 out/topology/topology_35_5_s5.gph out/topology/topology_35_5_s5.json 10000000 8 0.5 1
+t2_topology_35_6_s1 ./qob_topo 35 6 150 60 1 out/topology/topology_35_6_s1.gph out/topology/topology_35_6_s1.json 10000000 8 0.5 1
+t2_topology_35_6_s2 ./qob_topo 35 6 150 60 2 out/topology/topology_35_6_s2.gph out/topology/topology_35_6_s2.json 10000000 8 0.5 1
+t2_topology_35_6_s3 ./qob_topo 35 6 150 60 3 out/topology/topology_35_6_s3.gph out/topology/topology_35_6_s3.json 10000000 8 0.5 1
+t2_topology_35_6_s4 ./qob_topo 35 6 150 60 4 out/topology/topology_35_6_s4.gph out/topology/topology_35_6_s4.json 10000000 8 0.5 1
+t2_topology_35_6_s5 ./qob_topo 35 6 150 60 5 out/topology/topology_35_6_s5.gph out/topology/topology_35_6_s5.json 10000000 8 0.5 1
+t2_topology_40_6_s1 ./qob_topo 40 6 150 60 1 out/topology/topology_40_6_s1.gph out/topology/topology_40_6_s1.json 10000000 8 0.5 1
+t2_topology_40_6_s2 ./qob_topo 40 6 150 60 2 out/topology/topology_40_6_s2.gph out/topology/topology_40_6_s2.json 10000000 8 0.5 1
+t2_topology_40_6_s3 ./qob_topo 40 6 150 60 3 out/topology/topology_40_6_s3.gph out/topology/topology_40_6_s3.json 10000000 8 0.5 1
+t2_topology_40_6_s4 ./qob_topo 40 6 150 60 4 out/topology/topology_40_6_s4.gph out/topology/topology_40_6_s4.json 10000000 8 0.5 1
+t2_topology_40_6_s5 ./qob_topo 40 6 150 60 5 out/topology/topology_40_6_s5.gph out/topology/topology_40_6_s5.json 10000000 8 0.5 1
+t2_topology_50_4_s1 ./qob_topo 50 4 150 60 1 out/topology/topology_50_4_s1.gph out/topology/topology_50_4_s1.json 10000000 8 0.5 1
+t2_topology_50_4_s2 ./qob_topo 50 4 150 60 2 out/topology/topology_50_4_s2.gph out/topology/topology_50_4_s2.json 10000000 8 0.5 1
+t2_topology_50_4_s3 ./qob_topo 50 4 150 60 3 out/topology/topology_50_4_s3.gph out/topology/topology_50_4_s3.json 10000000 8 0.5 1
+t2_topology_50_4_s4 ./qob_topo 50 4 150 60 4 out/topology/topology_50_4_s4.gph out/topology/topology_50_4_s4.json 10000000 8 0.5 1
+t2_topology_50_4_s5 ./qob_topo 50 4 150 60 5 out/topology/topology_50_4_s5.gph out/topology/topology_50_4_s5.json 10000000 8 0.5 1
+t2_topology_512_4_s1 ./qob_topo 512 4 120 60 1 out/topology/topology_512_4_s1.gph out/topology/topology_512_4_s1.json 200000 8 0.5 1
+t2_topology_512_4_s2 ./qob_topo 512 4 120 60 2 out/topology/topology_512_4_s2.gph out/topology/topology_512_4_s2.json 200000 8 0.5 1
+t2_topology_512_4_s3 ./qob_topo 512 4 120 60 3 out/topology/topology_512_4_s3.gph out/topology/topology_512_4_s3.json 200000 8 0.5 1
+t2_topology_512_4_s4 ./qob_topo 512 4 120 60 4 out/topology/topology_512_4_s4.gph out/topology/topology_512_4_s4.json 200000 8 0.5 1
+t2_topology_512_4_s5 ./qob_topo 512 4 120 60 5 out/topology/topology_512_4_s5.gph out/topology/topology_512_4_s5.json 200000 8 0.5 1
+t2_topology_512_6_s1 ./qob_topo 512 6 120 60 1 out/topology/topology_512_6_s1.gph out/topology/topology_512_6_s1.json 200000 8 0.5 1
+t2_topology_512_6_s2 ./qob_topo 512 6 120 60 2 out/topology/topology_512_6_s2.gph out/topology/topology_512_6_s2.json 200000 8 0.5 1
+t2_topology_512_6_s3 ./qob_topo 512 6 120 60 3 out/topology/topology_512_6_s3.gph out/topology/topology_512_6_s3.json 200000 8 0.5 1
+t2_topology_512_6_s4 ./qob_topo 512 6 120 60 4 out/topology/topology_512_6_s4.gph out/topology/topology_512_6_s4.json 200000 8 0.5 1
+t2_topology_512_6_s5 ./qob_topo 512 6 120 60 5 out/topology/topology_512_6_s5.gph out/topology/topology_512_6_s5.json 200000 8 0.5 1
+t2_topology_1024_4_s1 ./qob_topo 1024 4 120 60 1 out/topology/topology_1024_4_s1.gph out/topology/topology_1024_4_s1.json 50000 8 0.5 1
+t2_topology_1024_4_s2 ./qob_topo 1024 4 120 60 2 out/topology/topology_1024_4_s2.gph out/topology/topology_1024_4_s2.json 50000 8 0.5 1
+t2_topology_1024_4_s3 ./qob_topo 1024 4 120 60 3 out/topology/topology_1024_4_s3.gph out/topology/topology_1024_4_s3.json 50000 8 0.5 1
+t2_topology_1024_4_s4 ./qob_topo 1024 4 120 60 4 out/topology/topology_1024_4_s4.gph out/topology/topology_1024_4_s4.json 50000 8 0.5 1
+t2_topology_1024_4_s5 ./qob_topo 1024 4 120 60 5 out/topology/topology_1024_4_s5.gph out/topology/topology_1024_4_s5.json 50000 8 0.5 1
+t2_topology_1726_30_s1 ./qob_topo 1726 30 120 60 1 out/topology/topology_1726_30_s1.gph out/topology/topology_1726_30_s1.json 10000 8 0.5 1
+t2_topology_1726_30_s2 ./qob_topo 1726 30 120 60 2 out/topology/topology_1726_30_s2.gph out/topology/topology_1726_30_s2.json 10000 8 0.5 1
+t2_topology_1726_30_s3 ./qob_topo 1726 30 120 60 3 out/topology/topology_1726_30_s3.gph out/topology/topology_1726_30_s3.json 10000 8 0.5 1
+t2_topology_1726_30_s4 ./qob_topo 1726 30 120 60 4 out/topology/topology_1726_30_s4.gph out/topology/topology_1726_30_s4.json 10000 8 0.5 1
+t2_topology_1726_30_s5 ./qob_topo 1726 30 120 60 5 out/topology/topology_1726_30_s5.gph out/topology/topology_1726_30_s5.json 10000 8 0.5 1
+t2_topology_4855_15_s1 ./qob_topo 4855 15 120 60 1 out/topology/topology_4855_15_s1.gph out/topology/topology_4855_15_s1.json 3000 8 0.5 1
+t2_topology_4855_15_s2 ./qob_topo 4855 15 120 60 2 out/topology/topology_4855_15_s2.gph out/topology/topology_4855_15_s2.json 3000 8 0.5 1
+t2_topology_4855_15_s3 ./qob_topo 4855 15 120 60 3 out/topology/topology_4855_15_s3.gph out/topology/topology_4855_15_s3.json 3000 8 0.5 1
+t2_topology_4855_15_s4 ./qob_topo 4855 15 120 60 4 out/topology/topology_4855_15_s4.gph out/topology/topology_4855_15_s4.json 3000 8 0.5 1
+t2_topology_4855_15_s5 ./qob_topo 4855 15 120 60 5 out/topology/topology_4855_15_s5.gph out/topology/topology_4855_15_s5.json 3000 8 0.5 1
+t2_topology_9344_6_s1 ./qob_topo 9344 6 120 60 1 out/topology/topology_9344_6_s1.gph out/topology/topology_9344_6_s1.json 1000 8 0.5 1
+t2_topology_9344_6_s2 ./qob_topo 9344 6 120 60 2 out/topology/topology_9344_6_s2.gph out/topology/topology_9344_6_s2.json 1000 8 0.5 1
+t2_topology_9344_6_s3 ./qob_topo 9344 6 120 60 3 out/topology/topology_9344_6_s3.gph out/topology/topology_9344_6_s3.json 1000 8 0.5 1
+t2_topology_9344_6_s4 ./qob_topo 9344 6 120 60 4 out/topology/topology_9344_6_s4.gph out/topology/topology_9344_6_s4.json 1000 8 0.5 1
+t2_topology_9344_6_s5 ./qob_topo 9344 6 120 60 5 out/topology/topology_9344_6_s5.gph out/topology/topology_9344_6_s5.json 1000 8 0.5 1
+
+# 07-independentset, 30 s runs: graph limit(wall s) seed write-threshold set-out gamma rho stop time-series-out
+m2_aves-sparrow-social_s1 ./qob_numvc QOBLIB/07-independentset/instances/aves-sparrow-social.gph 30 1 0 out/mis/aves-sparrow-social_s1.sol 0 0 0 out/mis/aves-sparrow-social_s1.json
+m2_aves-sparrow-social_s2 ./qob_numvc QOBLIB/07-independentset/instances/aves-sparrow-social.gph 30 2 0 out/mis/aves-sparrow-social_s2.sol 0 0 0 out/mis/aves-sparrow-social_s2.json
+m2_aves-sparrow-social_s3 ./qob_numvc QOBLIB/07-independentset/instances/aves-sparrow-social.gph 30 3 0 out/mis/aves-sparrow-social_s3.sol 0 0 0 out/mis/aves-sparrow-social_s3.json
+m2_aves-sparrow-social_s4 ./qob_numvc QOBLIB/07-independentset/instances/aves-sparrow-social.gph 30 4 0 out/mis/aves-sparrow-social_s4.sol 0 0 0 out/mis/aves-sparrow-social_s4.json
+m2_aves-sparrow-social_s5 ./qob_numvc QOBLIB/07-independentset/instances/aves-sparrow-social.gph 30 5 0 out/mis/aves-sparrow-social_s5.sol 0 0 0 out/mis/aves-sparrow-social_s5.json
+m2_brock200-1_s1 ./qob_numvc QOBLIB/07-independentset/instances/brock200-1.gph 30 1 0 out/mis/brock200-1_s1.sol 0 0 0 out/mis/brock200-1_s1.json
+m2_brock200-1_s2 ./qob_numvc QOBLIB/07-independentset/instances/brock200-1.gph 30 2 0 out/mis/brock200-1_s2.sol 0 0 0 out/mis/brock200-1_s2.json
+m2_brock200-1_s3 ./qob_numvc QOBLIB/07-independentset/instances/brock200-1.gph 30 3 0 out/mis/brock200-1_s3.sol 0 0 0 out/mis/brock200-1_s3.json
+m2_brock200-1_s4 ./qob_numvc QOBLIB/07-independentset/instances/brock200-1.gph 30 4 0 out/mis/brock200-1_s4.sol 0 0 0 out/mis/brock200-1_s4.json
+m2_brock200-1_s5 ./qob_numvc QOBLIB/07-independentset/instances/brock200-1.gph 30 5 0 out/mis/brock200-1_s5.sol 0 0 0 out/mis/brock200-1_s5.json
+m2_brock200-2_s1 ./qob_numvc QOBLIB/07-independentset/instances/brock200-2.gph 30 1 0 out/mis/brock200-2_s1.sol 0 0 0 out/mis/brock200-2_s1.json
+m2_brock200-2_s2 ./qob_numvc QOBLIB/07-independentset/instances/brock200-2.gph 30 2 0 out/mis/brock200-2_s2.sol 0 0 0 out/mis/brock200-2_s2.json
+m2_brock200-2_s3 ./qob_numvc QOBLIB/07-independentset/instances/brock200-2.gph 30 3 0 out/mis/brock200-2_s3.sol 0 0 0 out/mis/brock200-2_s3.json
+m2_brock200-2_s4 ./qob_numvc QOBLIB/07-independentset/instances/brock200-2.gph 30 4 0 out/mis/brock200-2_s4.sol 0 0 0 out/mis/brock200-2_s4.json
+m2_brock200-2_s5 ./qob_numvc QOBLIB/07-independentset/instances/brock200-2.gph 30 5 0 out/mis/brock200-2_s5.sol 0 0 0 out/mis/brock200-2_s5.json
+m2_brock200-3_s1 ./qob_numvc QOBLIB/07-independentset/instances/brock200-3.gph 30 1 0 out/mis/brock200-3_s1.sol 0 0 0 out/mis/brock200-3_s1.json
+m2_brock200-3_s2 ./qob_numvc QOBLIB/07-independentset/instances/brock200-3.gph 30 2 0 out/mis/brock200-3_s2.sol 0 0 0 out/mis/brock200-3_s2.json
+m2_brock200-3_s3 ./qob_numvc QOBLIB/07-independentset/instances/brock200-3.gph 30 3 0 out/mis/brock200-3_s3.sol 0 0 0 out/mis/brock200-3_s3.json
+m2_brock200-3_s4 ./qob_numvc QOBLIB/07-independentset/instances/brock200-3.gph 30 4 0 out/mis/brock200-3_s4.sol 0 0 0 out/mis/brock200-3_s4.json
+m2_brock200-3_s5 ./qob_numvc QOBLIB/07-independentset/instances/brock200-3.gph 30 5 0 out/mis/brock200-3_s5.sol 0 0 0 out/mis/brock200-3_s5.json
+m2_brock200-4_s1 ./qob_numvc QOBLIB/07-independentset/instances/brock200-4.gph 30 1 0 out/mis/brock200-4_s1.sol 0 0 0 out/mis/brock200-4_s1.json
+m2_brock200-4_s2 ./qob_numvc QOBLIB/07-independentset/instances/brock200-4.gph 30 2 0 out/mis/brock200-4_s2.sol 0 0 0 out/mis/brock200-4_s2.json
+m2_brock200-4_s3 ./qob_numvc QOBLIB/07-independentset/instances/brock200-4.gph 30 3 0 out/mis/brock200-4_s3.sol 0 0 0 out/mis/brock200-4_s3.json
+m2_brock200-4_s4 ./qob_numvc QOBLIB/07-independentset/instances/brock200-4.gph 30 4 0 out/mis/brock200-4_s4.sol 0 0 0 out/mis/brock200-4_s4.json
+m2_brock200-4_s5 ./qob_numvc QOBLIB/07-independentset/instances/brock200-4.gph 30 5 0 out/mis/brock200-4_s5.sol 0 0 0 out/mis/brock200-4_s5.json
+m2_brock400-1_s1 ./qob_numvc QOBLIB/07-independentset/instances/brock400-1.gph 30 1 0 out/mis/brock400-1_s1.sol 0 0 0 out/mis/brock400-1_s1.json
+m2_brock400-1_s2 ./qob_numvc QOBLIB/07-independentset/instances/brock400-1.gph 30 2 0 out/mis/brock400-1_s2.sol 0 0 0 out/mis/brock400-1_s2.json
+m2_brock400-1_s3 ./qob_numvc QOBLIB/07-independentset/instances/brock400-1.gph 30 3 0 out/mis/brock400-1_s3.sol 0 0 0 out/mis/brock400-1_s3.json
+m2_brock400-1_s4 ./qob_numvc QOBLIB/07-independentset/instances/brock400-1.gph 30 4 0 out/mis/brock400-1_s4.sol 0 0 0 out/mis/brock400-1_s4.json
+m2_brock400-1_s5 ./qob_numvc QOBLIB/07-independentset/instances/brock400-1.gph 30 5 0 out/mis/brock400-1_s5.sol 0 0 0 out/mis/brock400-1_s5.json
+m2_brock800-1_s1 ./qob_numvc QOBLIB/07-independentset/instances/brock800-1.gph 30 1 0 out/mis/brock800-1_s1.sol 0 0 0 out/mis/brock800-1_s1.json
+m2_brock800-1_s2 ./qob_numvc QOBLIB/07-independentset/instances/brock800-1.gph 30 2 0 out/mis/brock800-1_s2.sol 0 0 0 out/mis/brock800-1_s2.json
+m2_brock800-1_s3 ./qob_numvc QOBLIB/07-independentset/instances/brock800-1.gph 30 3 0 out/mis/brock800-1_s3.sol 0 0 0 out/mis/brock800-1_s3.json
+m2_brock800-1_s4 ./qob_numvc QOBLIB/07-independentset/instances/brock800-1.gph 30 4 0 out/mis/brock800-1_s4.sol 0 0 0 out/mis/brock800-1_s4.json
+m2_brock800-1_s5 ./qob_numvc QOBLIB/07-independentset/instances/brock800-1.gph 30 5 0 out/mis/brock800-1_s5.sol 0 0 0 out/mis/brock800-1_s5.json
+m2_c-fat200-1_s1 ./qob_numvc QOBLIB/07-independentset/instances/c-fat200-1.gph 30 1 0 out/mis/c-fat200-1_s1.sol 0 0 0 out/mis/c-fat200-1_s1.json
+m2_c-fat200-1_s2 ./qob_numvc QOBLIB/07-independentset/instances/c-fat200-1.gph 30 2 0 out/mis/c-fat200-1_s2.sol 0 0 0 out/mis/c-fat200-1_s2.json
+m2_c-fat200-1_s3 ./qob_numvc QOBLIB/07-independentset/instances/c-fat200-1.gph 30 3 0 out/mis/c-fat200-1_s3.sol 0 0 0 out/mis/c-fat200-1_s3.json
+m2_c-fat200-1_s4 ./qob_numvc QOBLIB/07-independentset/instances/c-fat200-1.gph 30 4 0 out/mis/c-fat200-1_s4.sol 0 0 0 out/mis/c-fat200-1_s4.json
+m2_c-fat200-1_s5 ./qob_numvc QOBLIB/07-independentset/instances/c-fat200-1.gph 30 5 0 out/mis/c-fat200-1_s5.sol 0 0 0 out/mis/c-fat200-1_s5.json
+m2_C125-9_s1 ./qob_numvc QOBLIB/07-independentset/instances/C125-9.gph 30 1 0 out/mis/C125-9_s1.sol 0 0 0 out/mis/C125-9_s1.json
+m2_C125-9_s2 ./qob_numvc QOBLIB/07-independentset/instances/C125-9.gph 30 2 0 out/mis/C125-9_s2.sol 0 0 0 out/mis/C125-9_s2.json
+m2_C125-9_s3 ./qob_numvc QOBLIB/07-independentset/instances/C125-9.gph 30 3 0 out/mis/C125-9_s3.sol 0 0 0 out/mis/C125-9_s3.json
+m2_C125-9_s4 ./qob_numvc QOBLIB/07-independentset/instances/C125-9.gph 30 4 0 out/mis/C125-9_s4.sol 0 0 0 out/mis/C125-9_s4.json
+m2_C125-9_s5 ./qob_numvc QOBLIB/07-independentset/instances/C125-9.gph 30 5 0 out/mis/C125-9_s5.sol 0 0 0 out/mis/C125-9_s5.json
+m2_C4000-5_s1 ./qob_numvc QOBLIB/07-independentset/instances/C4000-5.gph 30 1 0 out/mis/C4000-5_s1.sol 0 0 0 out/mis/C4000-5_s1.json
+m2_C4000-5_s2 ./qob_numvc QOBLIB/07-independentset/instances/C4000-5.gph 30 2 0 out/mis/C4000-5_s2.sol 0 0 0 out/mis/C4000-5_s2.json
+m2_C4000-5_s3 ./qob_numvc QOBLIB/07-independentset/instances/C4000-5.gph 30 3 0 out/mis/C4000-5_s3.sol 0 0 0 out/mis/C4000-5_s3.json
+m2_C4000-5_s4 ./qob_numvc QOBLIB/07-independentset/instances/C4000-5.gph 30 4 0 out/mis/C4000-5_s4.sol 0 0 0 out/mis/C4000-5_s4.json
+m2_C4000-5_s5 ./qob_numvc QOBLIB/07-independentset/instances/C4000-5.gph 30 5 0 out/mis/C4000-5_s5.sol 0 0 0 out/mis/C4000-5_s5.json
+m2_C500-9_s1 ./qob_numvc QOBLIB/07-independentset/instances/C500-9.gph 30 1 0 out/mis/C500-9_s1.sol 0 0 0 out/mis/C500-9_s1.json
+m2_C500-9_s2 ./qob_numvc QOBLIB/07-independentset/instances/C500-9.gph 30 2 0 out/mis/C500-9_s2.sol 0 0 0 out/mis/C500-9_s2.json
+m2_C500-9_s3 ./qob_numvc QOBLIB/07-independentset/instances/C500-9.gph 30 3 0 out/mis/C500-9_s3.sol 0 0 0 out/mis/C500-9_s3.json
+m2_C500-9_s4 ./qob_numvc QOBLIB/07-independentset/instances/C500-9.gph 30 4 0 out/mis/C500-9_s4.sol 0 0 0 out/mis/C500-9_s4.json
+m2_C500-9_s5 ./qob_numvc QOBLIB/07-independentset/instances/C500-9.gph 30 5 0 out/mis/C500-9_s5.sol 0 0 0 out/mis/C500-9_s5.json
+m2_chesapeake_s1 ./qob_numvc QOBLIB/07-independentset/instances/chesapeake.gph 30 1 0 out/mis/chesapeake_s1.sol 0 0 0 out/mis/chesapeake_s1.json
+m2_chesapeake_s2 ./qob_numvc QOBLIB/07-independentset/instances/chesapeake.gph 30 2 0 out/mis/chesapeake_s2.sol 0 0 0 out/mis/chesapeake_s2.json
+m2_chesapeake_s3 ./qob_numvc QOBLIB/07-independentset/instances/chesapeake.gph 30 3 0 out/mis/chesapeake_s3.sol 0 0 0 out/mis/chesapeake_s3.json
+m2_chesapeake_s4 ./qob_numvc QOBLIB/07-independentset/instances/chesapeake.gph 30 4 0 out/mis/chesapeake_s4.sol 0 0 0 out/mis/chesapeake_s4.json
+m2_chesapeake_s5 ./qob_numvc QOBLIB/07-independentset/instances/chesapeake.gph 30 5 0 out/mis/chesapeake_s5.sol 0 0 0 out/mis/chesapeake_s5.json
+m2_es60fst01_s1 ./qob_numvc QOBLIB/07-independentset/instances/es60fst01.gph 30 1 0 out/mis/es60fst01_s1.sol 0 0 0 out/mis/es60fst01_s1.json
+m2_es60fst01_s2 ./qob_numvc QOBLIB/07-independentset/instances/es60fst01.gph 30 2 0 out/mis/es60fst01_s2.sol 0 0 0 out/mis/es60fst01_s2.json
+m2_es60fst01_s3 ./qob_numvc QOBLIB/07-independentset/instances/es60fst01.gph 30 3 0 out/mis/es60fst01_s3.sol 0 0 0 out/mis/es60fst01_s3.json
+m2_es60fst01_s4 ./qob_numvc QOBLIB/07-independentset/instances/es60fst01.gph 30 4 0 out/mis/es60fst01_s4.sol 0 0 0 out/mis/es60fst01_s4.json
+m2_es60fst01_s5 ./qob_numvc QOBLIB/07-independentset/instances/es60fst01.gph 30 5 0 out/mis/es60fst01_s5.sol 0 0 0 out/mis/es60fst01_s5.json
+m2_es60fst02_s1 ./qob_numvc QOBLIB/07-independentset/instances/es60fst02.gph 30 1 0 out/mis/es60fst02_s1.sol 0 0 0 out/mis/es60fst02_s1.json
+m2_es60fst02_s2 ./qob_numvc QOBLIB/07-independentset/instances/es60fst02.gph 30 2 0 out/mis/es60fst02_s2.sol 0 0 0 out/mis/es60fst02_s2.json
+m2_es60fst02_s3 ./qob_numvc QOBLIB/07-independentset/instances/es60fst02.gph 30 3 0 out/mis/es60fst02_s3.sol 0 0 0 out/mis/es60fst02_s3.json
+m2_es60fst02_s4 ./qob_numvc QOBLIB/07-independentset/instances/es60fst02.gph 30 4 0 out/mis/es60fst02_s4.sol 0 0 0 out/mis/es60fst02_s4.json
+m2_es60fst02_s5 ./qob_numvc QOBLIB/07-independentset/instances/es60fst02.gph 30 5 0 out/mis/es60fst02_s5.sol 0 0 0 out/mis/es60fst02_s5.json
+m2_es60fst03_s1 ./qob_numvc QOBLIB/07-independentset/instances/es60fst03.gph 30 1 0 out/mis/es60fst03_s1.sol 0 0 0 out/mis/es60fst03_s1.json
+m2_es60fst03_s2 ./qob_numvc QOBLIB/07-independentset/instances/es60fst03.gph 30 2 0 out/mis/es60fst03_s2.sol 0 0 0 out/mis/es60fst03_s2.json
+m2_es60fst03_s3 ./qob_numvc QOBLIB/07-independentset/instances/es60fst03.gph 30 3 0 out/mis/es60fst03_s3.sol 0 0 0 out/mis/es60fst03_s3.json
+m2_es60fst03_s4 ./qob_numvc QOBLIB/07-independentset/instances/es60fst03.gph 30 4 0 out/mis/es60fst03_s4.sol 0 0 0 out/mis/es60fst03_s4.json
+m2_es60fst03_s5 ./qob_numvc QOBLIB/07-independentset/instances/es60fst03.gph 30 5 0 out/mis/es60fst03_s5.sol 0 0 0 out/mis/es60fst03_s5.json
+m2_es60fst04_s1 ./qob_numvc QOBLIB/07-independentset/instances/es60fst04.gph 30 1 0 out/mis/es60fst04_s1.sol 0 0 0 out/mis/es60fst04_s1.json
+m2_es60fst04_s2 ./qob_numvc QOBLIB/07-independentset/instances/es60fst04.gph 30 2 0 out/mis/es60fst04_s2.sol 0 0 0 out/mis/es60fst04_s2.json
+m2_es60fst04_s3 ./qob_numvc QOBLIB/07-independentset/instances/es60fst04.gph 30 3 0 out/mis/es60fst04_s3.sol 0 0 0 out/mis/es60fst04_s3.json
+m2_es60fst04_s4 ./qob_numvc QOBLIB/07-independentset/instances/es60fst04.gph 30 4 0 out/mis/es60fst04_s4.sol 0 0 0 out/mis/es60fst04_s4.json
+m2_es60fst04_s5 ./qob_numvc QOBLIB/07-independentset/instances/es60fst04.gph 30 5 0 out/mis/es60fst04_s5.sol 0 0 0 out/mis/es60fst04_s5.json
+m2_farm_s1 ./qob_numvc QOBLIB/07-independentset/instances/farm.gph 30 1 0 out/mis/farm_s1.sol 0 0 0 out/mis/farm_s1.json
+m2_farm_s2 ./qob_numvc QOBLIB/07-independentset/instances/farm.gph 30 2 0 out/mis/farm_s2.sol 0 0 0 out/mis/farm_s2.json
+m2_farm_s3 ./qob_numvc QOBLIB/07-independentset/instances/farm.gph 30 3 0 out/mis/farm_s3.sol 0 0 0 out/mis/farm_s3.json
+m2_farm_s4 ./qob_numvc QOBLIB/07-independentset/instances/farm.gph 30 4 0 out/mis/farm_s4.sol 0 0 0 out/mis/farm_s4.json
+m2_farm_s5 ./qob_numvc QOBLIB/07-independentset/instances/farm.gph 30 5 0 out/mis/farm_s5.sol 0 0 0 out/mis/farm_s5.json
+m2_football_s1 ./qob_numvc QOBLIB/07-independentset/instances/football.gph 30 1 0 out/mis/football_s1.sol 0 0 0 out/mis/football_s1.json
+m2_football_s2 ./qob_numvc QOBLIB/07-independentset/instances/football.gph 30 2 0 out/mis/football_s2.sol 0 0 0 out/mis/football_s2.json
+m2_football_s3 ./qob_numvc QOBLIB/07-independentset/instances/football.gph 30 3 0 out/mis/football_s3.sol 0 0 0 out/mis/football_s3.json
+m2_football_s4 ./qob_numvc QOBLIB/07-independentset/instances/football.gph 30 4 0 out/mis/football_s4.sol 0 0 0 out/mis/football_s4.json
+m2_football_s5 ./qob_numvc QOBLIB/07-independentset/instances/football.gph 30 5 0 out/mis/football_s5.sol 0 0 0 out/mis/football_s5.json
+m2_frb100-40_s1 ./qob_numvc QOBLIB/07-independentset/instances/frb100-40.gph 30 1 0 out/mis/frb100-40_s1.sol 0 0 0 out/mis/frb100-40_s1.json
+m2_frb100-40_s2 ./qob_numvc QOBLIB/07-independentset/instances/frb100-40.gph 30 2 0 out/mis/frb100-40_s2.sol 0 0 0 out/mis/frb100-40_s2.json
+m2_frb100-40_s3 ./qob_numvc QOBLIB/07-independentset/instances/frb100-40.gph 30 3 0 out/mis/frb100-40_s3.sol 0 0 0 out/mis/frb100-40_s3.json
+m2_frb100-40_s4 ./qob_numvc QOBLIB/07-independentset/instances/frb100-40.gph 30 4 0 out/mis/frb100-40_s4.sol 0 0 0 out/mis/frb100-40_s4.json
+m2_frb100-40_s5 ./qob_numvc QOBLIB/07-independentset/instances/frb100-40.gph 30 5 0 out/mis/frb100-40_s5.sol 0 0 0 out/mis/frb100-40_s5.json
+m2_frb45-21-3_s1 ./qob_numvc QOBLIB/07-independentset/instances/frb45-21-3.gph 30 1 0 out/mis/frb45-21-3_s1.sol 0 0 0 out/mis/frb45-21-3_s1.json
+m2_frb45-21-3_s2 ./qob_numvc QOBLIB/07-independentset/instances/frb45-21-3.gph 30 2 0 out/mis/frb45-21-3_s2.sol 0 0 0 out/mis/frb45-21-3_s2.json
+m2_frb45-21-3_s3 ./qob_numvc QOBLIB/07-independentset/instances/frb45-21-3.gph 30 3 0 out/mis/frb45-21-3_s3.sol 0 0 0 out/mis/frb45-21-3_s3.json
+m2_frb45-21-3_s4 ./qob_numvc QOBLIB/07-independentset/instances/frb45-21-3.gph 30 4 0 out/mis/frb45-21-3_s4.sol 0 0 0 out/mis/frb45-21-3_s4.json
+m2_frb45-21-3_s5 ./qob_numvc QOBLIB/07-independentset/instances/frb45-21-3.gph 30 5 0 out/mis/frb45-21-3_s5.sol 0 0 0 out/mis/frb45-21-3_s5.json
+m2_frb50-23-3_s1 ./qob_numvc QOBLIB/07-independentset/instances/frb50-23-3.gph 30 1 0 out/mis/frb50-23-3_s1.sol 0 0 0 out/mis/frb50-23-3_s1.json
+m2_frb50-23-3_s2 ./qob_numvc QOBLIB/07-independentset/instances/frb50-23-3.gph 30 2 0 out/mis/frb50-23-3_s2.sol 0 0 0 out/mis/frb50-23-3_s2.json
+m2_frb50-23-3_s3 ./qob_numvc QOBLIB/07-independentset/instances/frb50-23-3.gph 30 3 0 out/mis/frb50-23-3_s3.sol 0 0 0 out/mis/frb50-23-3_s3.json
+m2_frb50-23-3_s4 ./qob_numvc QOBLIB/07-independentset/instances/frb50-23-3.gph 30 4 0 out/mis/frb50-23-3_s4.sol 0 0 0 out/mis/frb50-23-3_s4.json
+m2_frb50-23-3_s5 ./qob_numvc QOBLIB/07-independentset/instances/frb50-23-3.gph 30 5 0 out/mis/frb50-23-3_s5.sol 0 0 0 out/mis/frb50-23-3_s5.json
+m2_frb53-24-1_s1 ./qob_numvc QOBLIB/07-independentset/instances/frb53-24-1.gph 30 1 0 out/mis/frb53-24-1_s1.sol 0 0 0 out/mis/frb53-24-1_s1.json
+m2_frb53-24-1_s2 ./qob_numvc QOBLIB/07-independentset/instances/frb53-24-1.gph 30 2 0 out/mis/frb53-24-1_s2.sol 0 0 0 out/mis/frb53-24-1_s2.json
+m2_frb53-24-1_s3 ./qob_numvc QOBLIB/07-independentset/instances/frb53-24-1.gph 30 3 0 out/mis/frb53-24-1_s3.sol 0 0 0 out/mis/frb53-24-1_s3.json
+m2_frb53-24-1_s4 ./qob_numvc QOBLIB/07-independentset/instances/frb53-24-1.gph 30 4 0 out/mis/frb53-24-1_s4.sol 0 0 0 out/mis/frb53-24-1_s4.json
+m2_frb53-24-1_s5 ./qob_numvc QOBLIB/07-independentset/instances/frb53-24-1.gph 30 5 0 out/mis/frb53-24-1_s5.sol 0 0 0 out/mis/frb53-24-1_s5.json
+m2_frb59-26-2_s1 ./qob_numvc QOBLIB/07-independentset/instances/frb59-26-2.gph 30 1 0 out/mis/frb59-26-2_s1.sol 0 0 0 out/mis/frb59-26-2_s1.json
+m2_frb59-26-2_s2 ./qob_numvc QOBLIB/07-independentset/instances/frb59-26-2.gph 30 2 0 out/mis/frb59-26-2_s2.sol 0 0 0 out/mis/frb59-26-2_s2.json
+m2_frb59-26-2_s3 ./qob_numvc QOBLIB/07-independentset/instances/frb59-26-2.gph 30 3 0 out/mis/frb59-26-2_s3.sol 0 0 0 out/mis/frb59-26-2_s3.json
+m2_frb59-26-2_s4 ./qob_numvc QOBLIB/07-independentset/instances/frb59-26-2.gph 30 4 0 out/mis/frb59-26-2_s4.sol 0 0 0 out/mis/frb59-26-2_s4.json
+m2_frb59-26-2_s5 ./qob_numvc QOBLIB/07-independentset/instances/frb59-26-2.gph 30 5 0 out/mis/frb59-26-2_s5.sol 0 0 0 out/mis/frb59-26-2_s5.json
+m2_gen200_p0-9_44_s1 ./qob_numvc QOBLIB/07-independentset/instances/gen200_p0-9_44.gph 30 1 0 out/mis/gen200_p0-9_44_s1.sol 0 0 0 out/mis/gen200_p0-9_44_s1.json
+m2_gen200_p0-9_44_s2 ./qob_numvc QOBLIB/07-independentset/instances/gen200_p0-9_44.gph 30 2 0 out/mis/gen200_p0-9_44_s2.sol 0 0 0 out/mis/gen200_p0-9_44_s2.json
+m2_gen200_p0-9_44_s3 ./qob_numvc QOBLIB/07-independentset/instances/gen200_p0-9_44.gph 30 3 0 out/mis/gen200_p0-9_44_s3.sol 0 0 0 out/mis/gen200_p0-9_44_s3.json
+m2_gen200_p0-9_44_s4 ./qob_numvc QOBLIB/07-independentset/instances/gen200_p0-9_44.gph 30 4 0 out/mis/gen200_p0-9_44_s4.sol 0 0 0 out/mis/gen200_p0-9_44_s4.json
+m2_gen200_p0-9_44_s5 ./qob_numvc QOBLIB/07-independentset/instances/gen200_p0-9_44.gph 30 5 0 out/mis/gen200_p0-9_44_s5.sol 0 0 0 out/mis/gen200_p0-9_44_s5.json
+m2_hamming10-4_s1 ./qob_numvc QOBLIB/07-independentset/instances/hamming10-4.gph 30 1 0 out/mis/hamming10-4_s1.sol 0 0 0 out/mis/hamming10-4_s1.json
+m2_hamming10-4_s2 ./qob_numvc QOBLIB/07-independentset/instances/hamming10-4.gph 30 2 0 out/mis/hamming10-4_s2.sol 0 0 0 out/mis/hamming10-4_s2.json
+m2_hamming10-4_s3 ./qob_numvc QOBLIB/07-independentset/instances/hamming10-4.gph 30 3 0 out/mis/hamming10-4_s3.sol 0 0 0 out/mis/hamming10-4_s3.json
+m2_hamming10-4_s4 ./qob_numvc QOBLIB/07-independentset/instances/hamming10-4.gph 30 4 0 out/mis/hamming10-4_s4.sol 0 0 0 out/mis/hamming10-4_s4.json
+m2_hamming10-4_s5 ./qob_numvc QOBLIB/07-independentset/instances/hamming10-4.gph 30 5 0 out/mis/hamming10-4_s5.sol 0 0 0 out/mis/hamming10-4_s5.json
+m2_hamming6-2_s1 ./qob_numvc QOBLIB/07-independentset/instances/hamming6-2.gph 30 1 0 out/mis/hamming6-2_s1.sol 0 0 0 out/mis/hamming6-2_s1.json
+m2_hamming6-2_s2 ./qob_numvc QOBLIB/07-independentset/instances/hamming6-2.gph 30 2 0 out/mis/hamming6-2_s2.sol 0 0 0 out/mis/hamming6-2_s2.json
+m2_hamming6-2_s3 ./qob_numvc QOBLIB/07-independentset/instances/hamming6-2.gph 30 3 0 out/mis/hamming6-2_s3.sol 0 0 0 out/mis/hamming6-2_s3.json
+m2_hamming6-2_s4 ./qob_numvc QOBLIB/07-independentset/instances/hamming6-2.gph 30 4 0 out/mis/hamming6-2_s4.sol 0 0 0 out/mis/hamming6-2_s4.json
+m2_hamming6-2_s5 ./qob_numvc QOBLIB/07-independentset/instances/hamming6-2.gph 30 5 0 out/mis/hamming6-2_s5.sol 0 0 0 out/mis/hamming6-2_s5.json
+m2_hamming6-4_s1 ./qob_numvc QOBLIB/07-independentset/instances/hamming6-4.gph 30 1 0 out/mis/hamming6-4_s1.sol 0 0 0 out/mis/hamming6-4_s1.json
+m2_hamming6-4_s2 ./qob_numvc QOBLIB/07-independentset/instances/hamming6-4.gph 30 2 0 out/mis/hamming6-4_s2.sol 0 0 0 out/mis/hamming6-4_s2.json
+m2_hamming6-4_s3 ./qob_numvc QOBLIB/07-independentset/instances/hamming6-4.gph 30 3 0 out/mis/hamming6-4_s3.sol 0 0 0 out/mis/hamming6-4_s3.json
+m2_hamming6-4_s4 ./qob_numvc QOBLIB/07-independentset/instances/hamming6-4.gph 30 4 0 out/mis/hamming6-4_s4.sol 0 0 0 out/mis/hamming6-4_s4.json
+m2_hamming6-4_s5 ./qob_numvc QOBLIB/07-independentset/instances/hamming6-4.gph 30 5 0 out/mis/hamming6-4_s5.sol 0 0 0 out/mis/hamming6-4_s5.json
+m2_ibm32_s1 ./qob_numvc QOBLIB/07-independentset/instances/ibm32.gph 30 1 0 out/mis/ibm32_s1.sol 0 0 0 out/mis/ibm32_s1.json
+m2_ibm32_s2 ./qob_numvc QOBLIB/07-independentset/instances/ibm32.gph 30 2 0 out/mis/ibm32_s2.sol 0 0 0 out/mis/ibm32_s2.json
+m2_ibm32_s3 ./qob_numvc QOBLIB/07-independentset/instances/ibm32.gph 30 3 0 out/mis/ibm32_s3.sol 0 0 0 out/mis/ibm32_s3.json
+m2_ibm32_s4 ./qob_numvc QOBLIB/07-independentset/instances/ibm32.gph 30 4 0 out/mis/ibm32_s4.sol 0 0 0 out/mis/ibm32_s4.json
+m2_ibm32_s5 ./qob_numvc QOBLIB/07-independentset/instances/ibm32.gph 30 5 0 out/mis/ibm32_s5.sol 0 0 0 out/mis/ibm32_s5.json
+m2_insecta-ant-colony1-day38_s1 ./qob_numvc QOBLIB/07-independentset/instances/insecta-ant-colony1-day38.gph 30 1 0 out/mis/insecta-ant-colony1-day38_s1.sol 0 0 0 out/mis/insecta-ant-colony1-day38_s1.json
+m2_insecta-ant-colony1-day38_s2 ./qob_numvc QOBLIB/07-independentset/instances/insecta-ant-colony1-day38.gph 30 2 0 out/mis/insecta-ant-colony1-day38_s2.sol 0 0 0 out/mis/insecta-ant-colony1-day38_s2.json
+m2_insecta-ant-colony1-day38_s3 ./qob_numvc QOBLIB/07-independentset/instances/insecta-ant-colony1-day38.gph 30 3 0 out/mis/insecta-ant-colony1-day38_s3.sol 0 0 0 out/mis/insecta-ant-colony1-day38_s3.json
+m2_insecta-ant-colony1-day38_s4 ./qob_numvc QOBLIB/07-independentset/instances/insecta-ant-colony1-day38.gph 30 4 0 out/mis/insecta-ant-colony1-day38_s4.sol 0 0 0 out/mis/insecta-ant-colony1-day38_s4.json
+m2_insecta-ant-colony1-day38_s5 ./qob_numvc QOBLIB/07-independentset/instances/insecta-ant-colony1-day38.gph 30 5 0 out/mis/insecta-ant-colony1-day38_s5.sol 0 0 0 out/mis/insecta-ant-colony1-day38_s5.json
+m2_insecta-ant-colony3-day09_s1 ./qob_numvc QOBLIB/07-independentset/instances/insecta-ant-colony3-day09.gph 30 1 0 out/mis/insecta-ant-colony3-day09_s1.sol 0 0 0 out/mis/insecta-ant-colony3-day09_s1.json
+m2_insecta-ant-colony3-day09_s2 ./qob_numvc QOBLIB/07-independentset/instances/insecta-ant-colony3-day09.gph 30 2 0 out/mis/insecta-ant-colony3-day09_s2.sol 0 0 0 out/mis/insecta-ant-colony3-day09_s2.json
+m2_insecta-ant-colony3-day09_s3 ./qob_numvc QOBLIB/07-independentset/instances/insecta-ant-colony3-day09.gph 30 3 0 out/mis/insecta-ant-colony3-day09_s3.sol 0 0 0 out/mis/insecta-ant-colony3-day09_s3.json
+m2_insecta-ant-colony3-day09_s4 ./qob_numvc QOBLIB/07-independentset/instances/insecta-ant-colony3-day09.gph 30 4 0 out/mis/insecta-ant-colony3-day09_s4.sol 0 0 0 out/mis/insecta-ant-colony3-day09_s4.json
+m2_insecta-ant-colony3-day09_s5 ./qob_numvc QOBLIB/07-independentset/instances/insecta-ant-colony3-day09.gph 30 5 0 out/mis/insecta-ant-colony3-day09_s5.sol 0 0 0 out/mis/insecta-ant-colony3-day09_s5.json
+m2_johnson16-2-4_s1 ./qob_numvc QOBLIB/07-independentset/instances/johnson16-2-4.gph 30 1 0 out/mis/johnson16-2-4_s1.sol 0 0 0 out/mis/johnson16-2-4_s1.json
+m2_johnson16-2-4_s2 ./qob_numvc QOBLIB/07-independentset/instances/johnson16-2-4.gph 30 2 0 out/mis/johnson16-2-4_s2.sol 0 0 0 out/mis/johnson16-2-4_s2.json
+m2_johnson16-2-4_s3 ./qob_numvc QOBLIB/07-independentset/instances/johnson16-2-4.gph 30 3 0 out/mis/johnson16-2-4_s3.sol 0 0 0 out/mis/johnson16-2-4_s3.json
+m2_johnson16-2-4_s4 ./qob_numvc QOBLIB/07-independentset/instances/johnson16-2-4.gph 30 4 0 out/mis/johnson16-2-4_s4.sol 0 0 0 out/mis/johnson16-2-4_s4.json
+m2_johnson16-2-4_s5 ./qob_numvc QOBLIB/07-independentset/instances/johnson16-2-4.gph 30 5 0 out/mis/johnson16-2-4_s5.sol 0 0 0 out/mis/johnson16-2-4_s5.json
+m2_johnson8-2-4_s1 ./qob_numvc QOBLIB/07-independentset/instances/johnson8-2-4.gph 30 1 0 out/mis/johnson8-2-4_s1.sol 0 0 0 out/mis/johnson8-2-4_s1.json
+m2_johnson8-2-4_s2 ./qob_numvc QOBLIB/07-independentset/instances/johnson8-2-4.gph 30 2 0 out/mis/johnson8-2-4_s2.sol 0 0 0 out/mis/johnson8-2-4_s2.json
+m2_johnson8-2-4_s3 ./qob_numvc QOBLIB/07-independentset/instances/johnson8-2-4.gph 30 3 0 out/mis/johnson8-2-4_s3.sol 0 0 0 out/mis/johnson8-2-4_s3.json
+m2_johnson8-2-4_s4 ./qob_numvc QOBLIB/07-independentset/instances/johnson8-2-4.gph 30 4 0 out/mis/johnson8-2-4_s4.sol 0 0 0 out/mis/johnson8-2-4_s4.json
+m2_johnson8-2-4_s5 ./qob_numvc QOBLIB/07-independentset/instances/johnson8-2-4.gph 30 5 0 out/mis/johnson8-2-4_s5.sol 0 0 0 out/mis/johnson8-2-4_s5.json
+m2_johnson8-4-4_s1 ./qob_numvc QOBLIB/07-independentset/instances/johnson8-4-4.gph 30 1 0 out/mis/johnson8-4-4_s1.sol 0 0 0 out/mis/johnson8-4-4_s1.json
+m2_johnson8-4-4_s2 ./qob_numvc QOBLIB/07-independentset/instances/johnson8-4-4.gph 30 2 0 out/mis/johnson8-4-4_s2.sol 0 0 0 out/mis/johnson8-4-4_s2.json
+m2_johnson8-4-4_s3 ./qob_numvc QOBLIB/07-independentset/instances/johnson8-4-4.gph 30 3 0 out/mis/johnson8-4-4_s3.sol 0 0 0 out/mis/johnson8-4-4_s3.json
+m2_johnson8-4-4_s4 ./qob_numvc QOBLIB/07-independentset/instances/johnson8-4-4.gph 30 4 0 out/mis/johnson8-4-4_s4.sol 0 0 0 out/mis/johnson8-4-4_s4.json
+m2_johnson8-4-4_s5 ./qob_numvc QOBLIB/07-independentset/instances/johnson8-4-4.gph 30 5 0 out/mis/johnson8-4-4_s5.sol 0 0 0 out/mis/johnson8-4-4_s5.json
+m2_karate_s1 ./qob_numvc QOBLIB/07-independentset/instances/karate.gph 30 1 0 out/mis/karate_s1.sol 0 0 0 out/mis/karate_s1.json
+m2_karate_s2 ./qob_numvc QOBLIB/07-independentset/instances/karate.gph 30 2 0 out/mis/karate_s2.sol 0 0 0 out/mis/karate_s2.json
+m2_karate_s3 ./qob_numvc QOBLIB/07-independentset/instances/karate.gph 30 3 0 out/mis/karate_s3.sol 0 0 0 out/mis/karate_s3.json
+m2_karate_s4 ./qob_numvc QOBLIB/07-independentset/instances/karate.gph 30 4 0 out/mis/karate_s4.sol 0 0 0 out/mis/karate_s4.json
+m2_karate_s5 ./qob_numvc QOBLIB/07-independentset/instances/karate.gph 30 5 0 out/mis/karate_s5.sol 0 0 0 out/mis/karate_s5.json
+m2_keller4_s1 ./qob_numvc QOBLIB/07-independentset/instances/keller4.gph 30 1 0 out/mis/keller4_s1.sol 0 0 0 out/mis/keller4_s1.json
+m2_keller4_s2 ./qob_numvc QOBLIB/07-independentset/instances/keller4.gph 30 2 0 out/mis/keller4_s2.sol 0 0 0 out/mis/keller4_s2.json
+m2_keller4_s3 ./qob_numvc QOBLIB/07-independentset/instances/keller4.gph 30 3 0 out/mis/keller4_s3.sol 0 0 0 out/mis/keller4_s3.json
+m2_keller4_s4 ./qob_numvc QOBLIB/07-independentset/instances/keller4.gph 30 4 0 out/mis/keller4_s4.sol 0 0 0 out/mis/keller4_s4.json
+m2_keller4_s5 ./qob_numvc QOBLIB/07-independentset/instances/keller4.gph 30 5 0 out/mis/keller4_s5.sol 0 0 0 out/mis/keller4_s5.json
+m2_keller6_s1 ./qob_numvc QOBLIB/07-independentset/instances/keller6.gph 30 1 0 out/mis/keller6_s1.sol 0 0 0 out/mis/keller6_s1.json
+m2_keller6_s2 ./qob_numvc QOBLIB/07-independentset/instances/keller6.gph 30 2 0 out/mis/keller6_s2.sol 0 0 0 out/mis/keller6_s2.json
+m2_keller6_s3 ./qob_numvc QOBLIB/07-independentset/instances/keller6.gph 30 3 0 out/mis/keller6_s3.sol 0 0 0 out/mis/keller6_s3.json
+m2_keller6_s4 ./qob_numvc QOBLIB/07-independentset/instances/keller6.gph 30 4 0 out/mis/keller6_s4.sol 0 0 0 out/mis/keller6_s4.json
+m2_keller6_s5 ./qob_numvc QOBLIB/07-independentset/instances/keller6.gph 30 5 0 out/mis/keller6_s5.sol 0 0 0 out/mis/keller6_s5.json
+m2_mammalia-kangaroo-interactions_s1 ./qob_numvc QOBLIB/07-independentset/instances/mammalia-kangaroo-interactions.gph 30 1 0 out/mis/mammalia-kangaroo-interactions_s1.sol 0 0 0 out/mis/mammalia-kangaroo-interactions_s1.json
+m2_mammalia-kangaroo-interactions_s2 ./qob_numvc QOBLIB/07-independentset/instances/mammalia-kangaroo-interactions.gph 30 2 0 out/mis/mammalia-kangaroo-interactions_s2.sol 0 0 0 out/mis/mammalia-kangaroo-interactions_s2.json
+m2_mammalia-kangaroo-interactions_s3 ./qob_numvc QOBLIB/07-independentset/instances/mammalia-kangaroo-interactions.gph 30 3 0 out/mis/mammalia-kangaroo-interactions_s3.sol 0 0 0 out/mis/mammalia-kangaroo-interactions_s3.json
+m2_mammalia-kangaroo-interactions_s4 ./qob_numvc QOBLIB/07-independentset/instances/mammalia-kangaroo-interactions.gph 30 4 0 out/mis/mammalia-kangaroo-interactions_s4.sol 0 0 0 out/mis/mammalia-kangaroo-interactions_s4.json
+m2_mammalia-kangaroo-interactions_s5 ./qob_numvc QOBLIB/07-independentset/instances/mammalia-kangaroo-interactions.gph 30 5 0 out/mis/mammalia-kangaroo-interactions_s5.sol 0 0 0 out/mis/mammalia-kangaroo-interactions_s5.json
+m2_MANN-a9_s1 ./qob_numvc QOBLIB/07-independentset/instances/MANN-a9.gph 30 1 0 out/mis/MANN-a9_s1.sol 0 0 0 out/mis/MANN-a9_s1.json
+m2_MANN-a9_s2 ./qob_numvc QOBLIB/07-independentset/instances/MANN-a9.gph 30 2 0 out/mis/MANN-a9_s2.sol 0 0 0 out/mis/MANN-a9_s2.json
+m2_MANN-a9_s3 ./qob_numvc QOBLIB/07-independentset/instances/MANN-a9.gph 30 3 0 out/mis/MANN-a9_s3.sol 0 0 0 out/mis/MANN-a9_s3.json
+m2_MANN-a9_s4 ./qob_numvc QOBLIB/07-independentset/instances/MANN-a9.gph 30 4 0 out/mis/MANN-a9_s4.sol 0 0 0 out/mis/MANN-a9_s4.json
+m2_MANN-a9_s5 ./qob_numvc QOBLIB/07-independentset/instances/MANN-a9.gph 30 5 0 out/mis/MANN-a9_s5.sol 0 0 0 out/mis/MANN-a9_s5.json
+m2_p_hat1500-1_s1 ./qob_numvc QOBLIB/07-independentset/instances/p_hat1500-1.gph 30 1 0 out/mis/p_hat1500-1_s1.sol 0 0 0 out/mis/p_hat1500-1_s1.json
+m2_p_hat1500-1_s2 ./qob_numvc QOBLIB/07-independentset/instances/p_hat1500-1.gph 30 2 0 out/mis/p_hat1500-1_s2.sol 0 0 0 out/mis/p_hat1500-1_s2.json
+m2_p_hat1500-1_s3 ./qob_numvc QOBLIB/07-independentset/instances/p_hat1500-1.gph 30 3 0 out/mis/p_hat1500-1_s3.sol 0 0 0 out/mis/p_hat1500-1_s3.json
+m2_p_hat1500-1_s4 ./qob_numvc QOBLIB/07-independentset/instances/p_hat1500-1.gph 30 4 0 out/mis/p_hat1500-1_s4.sol 0 0 0 out/mis/p_hat1500-1_s4.json
+m2_p_hat1500-1_s5 ./qob_numvc QOBLIB/07-independentset/instances/p_hat1500-1.gph 30 5 0 out/mis/p_hat1500-1_s5.sol 0 0 0 out/mis/p_hat1500-1_s5.json
+m2_p_hat1500-3_s1 ./qob_numvc QOBLIB/07-independentset/instances/p_hat1500-3.gph 30 1 0 out/mis/p_hat1500-3_s1.sol 0 0 0 out/mis/p_hat1500-3_s1.json
+m2_p_hat1500-3_s2 ./qob_numvc QOBLIB/07-independentset/instances/p_hat1500-3.gph 30 2 0 out/mis/p_hat1500-3_s2.sol 0 0 0 out/mis/p_hat1500-3_s2.json
+m2_p_hat1500-3_s3 ./qob_numvc QOBLIB/07-independentset/instances/p_hat1500-3.gph 30 3 0 out/mis/p_hat1500-3_s3.sol 0 0 0 out/mis/p_hat1500-3_s3.json
+m2_p_hat1500-3_s4 ./qob_numvc QOBLIB/07-independentset/instances/p_hat1500-3.gph 30 4 0 out/mis/p_hat1500-3_s4.sol 0 0 0 out/mis/p_hat1500-3_s4.json
+m2_p_hat1500-3_s5 ./qob_numvc QOBLIB/07-independentset/instances/p_hat1500-3.gph 30 5 0 out/mis/p_hat1500-3_s5.sol 0 0 0 out/mis/p_hat1500-3_s5.json
+m2_R_1000_005_1_s1 ./qob_numvc QOBLIB/07-independentset/instances/R_1000_005_1.gph 30 1 0 out/mis/R_1000_005_1_s1.sol 0 0 0 out/mis/R_1000_005_1_s1.json
+m2_R_1000_005_1_s2 ./qob_numvc QOBLIB/07-independentset/instances/R_1000_005_1.gph 30 2 0 out/mis/R_1000_005_1_s2.sol 0 0 0 out/mis/R_1000_005_1_s2.json
+m2_R_1000_005_1_s3 ./qob_numvc QOBLIB/07-independentset/instances/R_1000_005_1.gph 30 3 0 out/mis/R_1000_005_1_s3.sol 0 0 0 out/mis/R_1000_005_1_s3.json
+m2_R_1000_005_1_s4 ./qob_numvc QOBLIB/07-independentset/instances/R_1000_005_1.gph 30 4 0 out/mis/R_1000_005_1_s4.sol 0 0 0 out/mis/R_1000_005_1_s4.json
+m2_R_1000_005_1_s5 ./qob_numvc QOBLIB/07-independentset/instances/R_1000_005_1.gph 30 5 0 out/mis/R_1000_005_1_s5.sol 0 0 0 out/mis/R_1000_005_1_s5.json
+m2_R_500_005_1_s1 ./qob_numvc QOBLIB/07-independentset/instances/R_500_005_1.gph 30 1 0 out/mis/R_500_005_1_s1.sol 0 0 0 out/mis/R_500_005_1_s1.json
+m2_R_500_005_1_s2 ./qob_numvc QOBLIB/07-independentset/instances/R_500_005_1.gph 30 2 0 out/mis/R_500_005_1_s2.sol 0 0 0 out/mis/R_500_005_1_s2.json
+m2_R_500_005_1_s3 ./qob_numvc QOBLIB/07-independentset/instances/R_500_005_1.gph 30 3 0 out/mis/R_500_005_1_s3.sol 0 0 0 out/mis/R_500_005_1_s3.json
+m2_R_500_005_1_s4 ./qob_numvc QOBLIB/07-independentset/instances/R_500_005_1.gph 30 4 0 out/mis/R_500_005_1_s4.sol 0 0 0 out/mis/R_500_005_1_s4.json
+m2_R_500_005_1_s5 ./qob_numvc QOBLIB/07-independentset/instances/R_500_005_1.gph 30 5 0 out/mis/R_500_005_1_s5.sol 0 0 0 out/mis/R_500_005_1_s5.json
+m2_sloane_1dc_128_s1 ./qob_numvc QOBLIB/07-independentset/instances/sloane_1dc_128.gph 30 1 0 out/mis/sloane_1dc_128_s1.sol 0 0 0 out/mis/sloane_1dc_128_s1.json
+m2_sloane_1dc_128_s2 ./qob_numvc QOBLIB/07-independentset/instances/sloane_1dc_128.gph 30 2 0 out/mis/sloane_1dc_128_s2.sol 0 0 0 out/mis/sloane_1dc_128_s2.json
+m2_sloane_1dc_128_s3 ./qob_numvc QOBLIB/07-independentset/instances/sloane_1dc_128.gph 30 3 0 out/mis/sloane_1dc_128_s3.sol 0 0 0 out/mis/sloane_1dc_128_s3.json
+m2_sloane_1dc_128_s4 ./qob_numvc QOBLIB/07-independentset/instances/sloane_1dc_128.gph 30 4 0 out/mis/sloane_1dc_128_s4.sol 0 0 0 out/mis/sloane_1dc_128_s4.json
+m2_sloane_1dc_128_s5 ./qob_numvc QOBLIB/07-independentset/instances/sloane_1dc_128.gph 30 5 0 out/mis/sloane_1dc_128_s5.sol 0 0 0 out/mis/sloane_1dc_128_s5.json
+m2_sloane_1dc_64_s1 ./qob_numvc QOBLIB/07-independentset/instances/sloane_1dc_64.gph 30 1 0 out/mis/sloane_1dc_64_s1.sol 0 0 0 out/mis/sloane_1dc_64_s1.json
+m2_sloane_1dc_64_s2 ./qob_numvc QOBLIB/07-independentset/instances/sloane_1dc_64.gph 30 2 0 out/mis/sloane_1dc_64_s2.sol 0 0 0 out/mis/sloane_1dc_64_s2.json
+m2_sloane_1dc_64_s3 ./qob_numvc QOBLIB/07-independentset/instances/sloane_1dc_64.gph 30 3 0 out/mis/sloane_1dc_64_s3.sol 0 0 0 out/mis/sloane_1dc_64_s3.json
+m2_sloane_1dc_64_s4 ./qob_numvc QOBLIB/07-independentset/instances/sloane_1dc_64.gph 30 4 0 out/mis/sloane_1dc_64_s4.sol 0 0 0 out/mis/sloane_1dc_64_s4.json
+m2_sloane_1dc_64_s5 ./qob_numvc QOBLIB/07-independentset/instances/sloane_1dc_64.gph 30 5 0 out/mis/sloane_1dc_64_s5.sol 0 0 0 out/mis/sloane_1dc_64_s5.json
+m2_sloane_1zc_128_s1 ./qob_numvc QOBLIB/07-independentset/instances/sloane_1zc_128.gph 30 1 0 out/mis/sloane_1zc_128_s1.sol 0 0 0 out/mis/sloane_1zc_128_s1.json
+m2_sloane_1zc_128_s2 ./qob_numvc QOBLIB/07-independentset/instances/sloane_1zc_128.gph 30 2 0 out/mis/sloane_1zc_128_s2.sol 0 0 0 out/mis/sloane_1zc_128_s2.json
+m2_sloane_1zc_128_s3 ./qob_numvc QOBLIB/07-independentset/instances/sloane_1zc_128.gph 30 3 0 out/mis/sloane_1zc_128_s3.sol 0 0 0 out/mis/sloane_1zc_128_s3.json
+m2_sloane_1zc_128_s4 ./qob_numvc QOBLIB/07-independentset/instances/sloane_1zc_128.gph 30 4 0 out/mis/sloane_1zc_128_s4.sol 0 0 0 out/mis/sloane_1zc_128_s4.json
+m2_sloane_1zc_128_s5 ./qob_numvc QOBLIB/07-independentset/instances/sloane_1zc_128.gph 30 5 0 out/mis/sloane_1zc_128_s5.sol 0 0 0 out/mis/sloane_1zc_128_s5.json
+m2_sloane_2dc_128_s1 ./qob_numvc QOBLIB/07-independentset/instances/sloane_2dc_128.gph 30 1 0 out/mis/sloane_2dc_128_s1.sol 0 0 0 out/mis/sloane_2dc_128_s1.json
+m2_sloane_2dc_128_s2 ./qob_numvc QOBLIB/07-independentset/instances/sloane_2dc_128.gph 30 2 0 out/mis/sloane_2dc_128_s2.sol 0 0 0 out/mis/sloane_2dc_128_s2.json
+m2_sloane_2dc_128_s3 ./qob_numvc QOBLIB/07-independentset/instances/sloane_2dc_128.gph 30 3 0 out/mis/sloane_2dc_128_s3.sol 0 0 0 out/mis/sloane_2dc_128_s3.json
+m2_sloane_2dc_128_s4 ./qob_numvc QOBLIB/07-independentset/instances/sloane_2dc_128.gph 30 4 0 out/mis/sloane_2dc_128_s4.sol 0 0 0 out/mis/sloane_2dc_128_s4.json
+m2_sloane_2dc_128_s5 ./qob_numvc QOBLIB/07-independentset/instances/sloane_2dc_128.gph 30 5 0 out/mis/sloane_2dc_128_s5.sol 0 0 0 out/mis/sloane_2dc_128_s5.json
+m2_socfb-haverford76_s1 ./qob_numvc QOBLIB/07-independentset/instances/socfb-haverford76.gph 30 1 0 out/mis/socfb-haverford76_s1.sol 0 0 0 out/mis/socfb-haverford76_s1.json
+m2_socfb-haverford76_s2 ./qob_numvc QOBLIB/07-independentset/instances/socfb-haverford76.gph 30 2 0 out/mis/socfb-haverford76_s2.sol 0 0 0 out/mis/socfb-haverford76_s2.json
+m2_socfb-haverford76_s3 ./qob_numvc QOBLIB/07-independentset/instances/socfb-haverford76.gph 30 3 0 out/mis/socfb-haverford76_s3.sol 0 0 0 out/mis/socfb-haverford76_s3.json
+m2_socfb-haverford76_s4 ./qob_numvc QOBLIB/07-independentset/instances/socfb-haverford76.gph 30 4 0 out/mis/socfb-haverford76_s4.sol 0 0 0 out/mis/socfb-haverford76_s4.json
+m2_socfb-haverford76_s5 ./qob_numvc QOBLIB/07-independentset/instances/socfb-haverford76.gph 30 5 0 out/mis/socfb-haverford76_s5.sol 0 0 0 out/mis/socfb-haverford76_s5.json
+m2_socfb-trinity100_s1 ./qob_numvc QOBLIB/07-independentset/instances/socfb-trinity100.gph 30 1 0 out/mis/socfb-trinity100_s1.sol 0 0 0 out/mis/socfb-trinity100_s1.json
+m2_socfb-trinity100_s2 ./qob_numvc QOBLIB/07-independentset/instances/socfb-trinity100.gph 30 2 0 out/mis/socfb-trinity100_s2.sol 0 0 0 out/mis/socfb-trinity100_s2.json
+m2_socfb-trinity100_s3 ./qob_numvc QOBLIB/07-independentset/instances/socfb-trinity100.gph 30 3 0 out/mis/socfb-trinity100_s3.sol 0 0 0 out/mis/socfb-trinity100_s3.json
+m2_socfb-trinity100_s4 ./qob_numvc QOBLIB/07-independentset/instances/socfb-trinity100.gph 30 4 0 out/mis/socfb-trinity100_s4.sol 0 0 0 out/mis/socfb-trinity100_s4.json
+m2_socfb-trinity100_s5 ./qob_numvc QOBLIB/07-independentset/instances/socfb-trinity100.gph 30 5 0 out/mis/socfb-trinity100_s5.sol 0 0 0 out/mis/socfb-trinity100_s5.json
+m2_sorrell4_s1 ./qob_numvc QOBLIB/07-independentset/instances/sorrell4.gph 30 1 0 out/mis/sorrell4_s1.sol 0 0 0 out/mis/sorrell4_s1.json
+m2_sorrell4_s2 ./qob_numvc QOBLIB/07-independentset/instances/sorrell4.gph 30 2 0 out/mis/sorrell4_s2.sol 0 0 0 out/mis/sorrell4_s2.json
+m2_sorrell4_s3 ./qob_numvc QOBLIB/07-independentset/instances/sorrell4.gph 30 3 0 out/mis/sorrell4_s3.sol 0 0 0 out/mis/sorrell4_s3.json
+m2_sorrell4_s4 ./qob_numvc QOBLIB/07-independentset/instances/sorrell4.gph 30 4 0 out/mis/sorrell4_s4.sol 0 0 0 out/mis/sorrell4_s4.json
+m2_sorrell4_s5 ./qob_numvc QOBLIB/07-independentset/instances/sorrell4.gph 30 5 0 out/mis/sorrell4_s5.sol 0 0 0 out/mis/sorrell4_s5.json
+m2_sorrell7_s1 ./qob_numvc QOBLIB/07-independentset/instances/sorrell7.gph 30 1 0 out/mis/sorrell7_s1.sol 0 0 0 out/mis/sorrell7_s1.json
+m2_sorrell7_s2 ./qob_numvc QOBLIB/07-independentset/instances/sorrell7.gph 30 2 0 out/mis/sorrell7_s2.sol 0 0 0 out/mis/sorrell7_s2.json
+m2_sorrell7_s3 ./qob_numvc QOBLIB/07-independentset/instances/sorrell7.gph 30 3 0 out/mis/sorrell7_s3.sol 0 0 0 out/mis/sorrell7_s3.json
+m2_sorrell7_s4 ./qob_numvc QOBLIB/07-independentset/instances/sorrell7.gph 30 4 0 out/mis/sorrell7_s4.sol 0 0 0 out/mis/sorrell7_s4.json
+m2_sorrell7_s5 ./qob_numvc QOBLIB/07-independentset/instances/sorrell7.gph 30 5 0 out/mis/sorrell7_s5.sol 0 0 0 out/mis/sorrell7_s5.json
+
+# 07-independentset, longer runs made first with earlier builds of the same search (no time-series file; the
+# series in the submission were rebuilt from the logs). Arguments: graph limit(wall s) seed write-threshold set-out
+# [gamma rho stop]. frb59-26-2 seed 1 was ended by hand at 1186 s after reaching 59.
+frb100-40_numvc_s1 ./qob_numvc QOBLIB/07-independentset/instances/frb100-40.gph 3600 1 96 out/frb100-40_numvc_s1.sol
+frb100-40_numvc_s2 ./qob_numvc QOBLIB/07-independentset/instances/frb100-40.gph 3600 2 96 out/frb100-40_numvc_s2.sol 0 0 100
+frb100-40_numvc_s3 ./qob_numvc QOBLIB/07-independentset/instances/frb100-40.gph 3600 3 96 out/frb100-40_numvc_s3.sol 0 0 100
+frb100-40_numvc_s4 ./qob_numvc QOBLIB/07-independentset/instances/frb100-40.gph 3600 4 96 out/frb100-40_numvc_s4.sol 0 0 100
+frb100-40_numvc_s5 ./qob_numvc QOBLIB/07-independentset/instances/frb100-40.gph 3600 5 96 out/frb100-40_numvc_s5.sol 0 0 100
+frb100-40_numvc_s6 ./qob_numvc QOBLIB/07-independentset/instances/frb100-40.gph 7200 6 97 out/frb100-40_numvc_s6.sol 0 0 100
+frb100-40_numvc_s7 ./qob_numvc QOBLIB/07-independentset/instances/frb100-40.gph 7200 7 97 out/frb100-40_numvc_s7.sol 0 0 100
+frb59-26-2_numvc_s1 ./qob_numvc QOBLIB/07-independentset/instances/frb59-26-2.gph 3600 1 58 out/frb59-26-2_numvc_s1.sol
+frb59-26-2_numvc_s2 ./qob_numvc QOBLIB/07-independentset/instances/frb59-26-2.gph 1800 2 58 out/frb59-26-2_numvc_s2.sol 0 0 59
+frb59-26-2_numvc_s3 ./qob_numvc QOBLIB/07-independentset/instances/frb59-26-2.gph 1800 3 58 out/frb59-26-2_numvc_s3.sol 0 0 59
+frb59-26-2_numvc_s4 ./qob_numvc QOBLIB/07-independentset/instances/frb59-26-2.gph 1800 4 58 out/frb59-26-2_numvc_s4.sol 0 0 59
+frb59-26-2_numvc_s5 ./qob_numvc QOBLIB/07-independentset/instances/frb59-26-2.gph 1800 5 58 out/frb59-26-2_numvc_s5.sol 0 0 59
