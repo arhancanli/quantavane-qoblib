@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite it as below, with QOBLIB and the submission folders."
+type: software
+title: "quantavane-qoblib: search programs and checker behind two QOBLIB submissions"
+abstract: "Search programs, an independent checker and exact run commands behind two submissions to QOBLIB, the Quantum Optimization Benchmarking Library."
+authors:
+  - family-names: Canli
+    given-names: Arhan
+    affiliation: Quantavane
+    email: arhan@quantavane.com
+license: MIT
+url: "https://quantavane.com"
+repository-code: "https://github.com/arhancanli/quantavane-qoblib"
+keywords:
+  - QOBLIB
+  - optimization benchmark
+  - maximum independent set

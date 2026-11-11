@@ -87,6 +87,23 @@ the same search and so follows the same path. The commands of all of these runs 
 The code and this text were written with Claude (Anthropic), model Claude Opus 5.5 (`claude-opus-5-5`), in Claude
 Code, and reviewed by Arhan Canli, who is responsible for them.
 
+## How to cite
+
+Cite this repository for the programs, with QOBLIB (github.com/ZIB-AOPT/QOBLIB) and the two submission folders
+named above for the results.
+
+```bibtex
+@misc{quantavane-qoblib,
+  author       = {Canli, Arhan},
+  title        = {quantavane-qoblib: search programs and checker behind two QOBLIB submissions},
+  year         = {2026},
+  howpublished = {\url{https://github.com/arhancanli/quantavane-qoblib}},
+  note         = {Quantavane; MIT licence}
+}
+```
+
+[CITATION.cff](CITATION.cff) gives the same reference for GitHub's "Cite this repository" button.
+
 ## License
 
 MIT (see `LICENSE`).
